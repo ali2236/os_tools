@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:mustache/mustache.dart';
 
 class TemplateLoader {
-  Map<String, Template> _templates = {};
+  final Map<String, Template> _templates = {};
 
   bool loaded = false;
 

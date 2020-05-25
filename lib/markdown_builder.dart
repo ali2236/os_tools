@@ -15,8 +15,6 @@ class MarkdownBuilder implements Builder {
         '.md': ['.html'],
       };
 
-
-
   @override
   FutureOr<void> build(BuildStep buildStep) async {
 
@@ -32,16 +30,16 @@ class MarkdownBuilder implements Builder {
     final configEnd = contents.indexOf('---', configStart + 3);
 
     final configString = contents.substring(configStart + 3, configEnd);
-    final config = loadYaml(configString);
+    final config = loadYaml(configString) as YamlMap;
 
     final template = AssetId(buildStep.inputId.package, 'web/templates/' + config['template'] ?? 'index.mustache');
     final templateContent = await buildStep.readAsString(template);
     final markdown = contents.substring(configEnd + 3);
-    final htmlOfMarkdown = markdownToHtml(markdown);
+    final renderedMustache = Template(markdown,  partialResolver: loader.getTemplate).renderString(config);
+    final markdownHtml = markdownToHtml(renderedMustache);
     final data = {
-      'title': config['title'] ?? 'Aligator',
-      'tags': config['tags'] ?? '',
-      'content': htmlOfMarkdown,
+      'content': markdownHtml,
+      ...config,
     };
 
     final mustacheTemplate =

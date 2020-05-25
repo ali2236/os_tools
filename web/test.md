@@ -3,8 +3,16 @@ title: Test
 category: Random
 tags: code, dart
 template: index.mustache
+items:
+    - name: sosis
+      price: 500
+    - name: call bus
+      price: 800
+    
 ---
 
-<p id="stuff"></p>
+A list of Items:
 
-<script src="main.dart.js"></script>
+{{#items}}
+<p>{{ . }}</p>
+{{/items}}
