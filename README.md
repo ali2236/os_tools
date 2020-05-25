@@ -1,8 +1,7 @@
-# static.Aligator.ir
+# static.Aligator.ir 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/bbe851b0-aec2-498b-a94f-0f77e98abe6c/deploy-status)](https://app.netlify.com/sites/laughing-lalande-7c4a0a/deploys)
 
 The most complex static Html website
-
-[link](http://static.aligator.ir/)
 
 #### description
 This project uses dart builders to generate a static html+css+js site from the contents of the `web` folder.
