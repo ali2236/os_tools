@@ -1,0 +1,15 @@
+builders:
+  markdown_builder:
+    import: "package:static_aligator_ir/builders.dart"
+    builder_factories:
+      - markdownBuilder
+    build_extensions:
+      .md:
+        - .html
+    auto_apply: root_package
+    required_inputs:
+      - .md
+post_process_builders:
+  cleanup_builder:
+    import: "package:static_aligator_ir/builders.dart"
+    builder_factory: cleanupBuilder
