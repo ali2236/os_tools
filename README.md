@@ -2,7 +2,7 @@
 
 The most complex static Html website
 
-[link](static.aligator.ir)
+[link](http://static.aligator.ir/)
 
 #### description
 This project uses dart builders to generate a static html+css+js site from the contents of the `web` folder.
