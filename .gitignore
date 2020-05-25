@@ -5,7 +5,19 @@
 pubspec.lock
 
 # Conventional directory for build outputs
-build/
+build/.packages
+build/.build.manifest
+build/packages
+build/*.md
 
 # Directory created by dartdoc
 doc/api/
+.idea/.gitignore
+.idea/dictionaries/
+.idea/libraries/
+.idea/misc.xml
+.idea/modules.xml
+.idea/static_aligator_ir.iml
+.idea/vcs.xml
+web/content/
+web/static/js/
