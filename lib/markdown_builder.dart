@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:build/build.dart';
@@ -47,6 +48,6 @@ class MarkdownBuilder implements Builder {
     final processedTemplate = mustacheTemplate.renderString(data);
     await buildStep.writeAsString(output, processedTemplate);
 
-
+    log.fine('transformed md to html: ${output.path}');
   }
 }

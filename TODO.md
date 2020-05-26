@@ -1,6 +1,7 @@
 # TODO
 
-- generate `sitemap.xml`
-- add a proper `navbar`
-- make a static list generator
+- ~~generate sitemap.xml~~
 - minify
+- add a proper navbar
+- make a static anime & movie list generator
+- make a static blog generator

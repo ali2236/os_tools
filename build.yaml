@@ -9,7 +9,20 @@ builders:
     auto_apply: root_package
     required_inputs:
       - .md
+  sitemap_builder:
+    import: "package:static_aligator_ir/builders.dart"
+    builder_factories:
+      - sitemapBuilder
+    build_extensions:
+        $package$:
+          - web/sitemap.xml
+    auto_apply: root_package
+    applies_builders:
+      - markdown_builder
 post_process_builders:
   cleanup_builder:
     import: "package:static_aligator_ir/builders.dart"
     builder_factory: cleanupBuilder
+    input_extensions:
+      - .md
+      - .mustache
