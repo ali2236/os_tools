@@ -7,7 +7,7 @@ template: index.mustache
 
 # Ali "Aligator" Ghanbari
 
-### About
+## About
 
 I'm a 19 year old from Iran. I am currently studying Software Engineering at Persian Gulf University.
 I love programming and experimenting with new programming ideas.
@@ -15,20 +15,20 @@ My favorite programming language is <em>Dart</em> (this site is also made using 
 I have been writing mobile apps for 2 years by now ,but I only published one app called PrayerTimes(also written in dart).
 I'm also an expert when it comes to PC hardware , love programming using my desktop computer ,and use the light theme in Intellij IDEs.
          
-### Skills
+## Skills
 
 * Dart programming language expert
 * Android app development using Flutter/Dart
 * Game development using Unity/C#
 * Installing windows :D
 
-### Interests
+## Interests
 * Dart
 * Flutter
 * VM Design
 * Software architecture
 
-### Education
+## Education
 
 1397-Present: Software Engineering Undergraduate at Persian Gulf University
 
@@ -42,7 +42,7 @@ I'm also an expert when it comes to PC hardware , love programming using my desk
 
 1384-1386: Porsina Elementary School
 
-### Languages
+## Languages
 * Persian
 * English
 * Arabic
