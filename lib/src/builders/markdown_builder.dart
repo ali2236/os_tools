@@ -5,7 +5,7 @@ import 'dart:io';
 import 'package:build/build.dart';
 import 'package:markdown/markdown.dart';
 import 'package:mustache/mustache.dart';
-import 'package:static_aligator_ir/template_loader.dart';
+import 'package:static_aligator_ir/src/template_loader.dart';
 import 'package:yaml/yaml.dart';
 
 Builder markdownBuilder(options) => MarkdownBuilder();
@@ -40,6 +40,7 @@ class MarkdownBuilder implements Builder {
     final markdownHtml = markdownToHtml(renderedMustache);
     final data = {
       'content': markdownHtml,
+      'hash': DateTime.now().millisecondsSinceEpoch.toRadixString(32),
       ...config,
     };
 
