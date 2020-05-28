@@ -21,5 +21,3 @@ doc/api/
 .idea/modules.xml
 .idea/static_aligator_ir.iml
 .idea/vcs.xml
-web/content/
-web/static/js/

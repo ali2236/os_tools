@@ -3,16 +3,22 @@ title: Projects!
 category: Random
 tags: code, projects
 template: index.mustache
-projects:
-    - name: Prayer Times
-      about: Prayer Times app
+imports: 
+    - web/content/projects.csv
 ---
 
 # Projects:
 
 ## A list of my projects:
 <div>
-{{#projects}}
-    {{> project_card }}
-{{/projects}}
+{{#projects }}
+<div>
+<div>
+{{ name }}
+</div>
+<div>
+{{ about }}
+</div>
+</div>
+{{/projects }}
 </div>

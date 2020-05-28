@@ -19,16 +19,6 @@ builders:
     auto_apply: root_package
     applies_builders:
       - markdown_builder
-  minified_builder:
-    import: "package:static_aligator_ir/builders.dart"
-    builder_factories:
-      - minifiedBuilder
-    build_extensions:
-      .css:
-        - .min.css
-    auto_apply: root_package
-    applies_builders:
-      - sass_builder
 post_process_builders:
   cleanup_builder:
     import: "package:static_aligator_ir/builders.dart"

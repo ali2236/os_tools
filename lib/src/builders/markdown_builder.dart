@@ -5,6 +5,8 @@ import 'dart:io';
 import 'package:build/build.dart';
 import 'package:markdown/markdown.dart';
 import 'package:mustache/mustache.dart';
+import 'package:static_aligator_ir/plugin_registry.dart';
+import 'package:static_aligator_ir/src/page_config.dart';
 import 'package:static_aligator_ir/src/template_loader.dart';
 import 'package:yaml/yaml.dart';
 
@@ -18,7 +20,6 @@ class MarkdownBuilder implements Builder {
 
   @override
   FutureOr<void> build(BuildStep buildStep) async {
-
     final loader = TemplateLoader();
     await loader.loadTemplates(Directory('web/templates'));
 
@@ -32,16 +33,24 @@ class MarkdownBuilder implements Builder {
 
     final configString = contents.substring(configStart + 3, configEnd);
     final config = loadYaml(configString) as YamlMap;
+    final pageConfig = PageConfig(config);
+    final configData = await pageConfig.getConfigs();
 
-    final template = AssetId(buildStep.inputId.package, 'web/templates/' + config['template'] ?? 'index.mustache');
+    final template = AssetId(buildStep.inputId.package,
+        'web/templates/' + config['template'] ?? 'index.mustache');
     final templateContent = await buildStep.readAsString(template);
-    final markdown = contents.substring(configEnd + 3);
-    final renderedMustache = Template(markdown,  partialResolver: loader.getTemplate).renderString(config);
+    final markdown = contents.substring(configEnd+3);
+    final renderedMustache =
+        Template(markdown, partialResolver: loader.getTemplate)
+            .renderString(configData);
     final markdownHtml = markdownToHtml(renderedMustache);
+    final plugins = List<String>.unmodifiable(config['plugins'] ?? []);
+    final processedHtml = pluginRegistry.applyAll(markdownHtml, plugins);
+
     final data = {
-      'content': markdownHtml,
+      'content': processedHtml,
       'hash': DateTime.now().millisecondsSinceEpoch.toRadixString(32),
-      ...config,
+      ...configData,
     };
 
     final mustacheTemplate =
