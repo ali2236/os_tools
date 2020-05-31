@@ -1,7 +1,9 @@
 import 'dart:async';
+import 'dart:convert';
 
 import 'package:build/build.dart';
 import 'package:glob/glob.dart';
+import 'package:static_aligator_ir/builders.dart';
 import 'package:xml/xml.dart';
 
 Builder sitemapBuilder(options) => SitemapBuilder('www.aligator.ir');
@@ -24,12 +26,12 @@ class SitemapBuilder implements Builder {
     final inputs = Glob('web/**.html');
     var counter = 0;
     var urls = <String>[];
-    await for (var file in buildStep.findAssets(inputs)) {
-      final webIndex = file.uri.pathSegments.indexOf('web');
+    await for (var asset in buildStep.findAssets(inputs)) {
+      final webIndex = asset.uri.pathSegments.indexOf('web');
       final url = Uri(
           scheme: 'http',
           host: host,
-          pathSegments: file.uri.pathSegments.sublist(webIndex + 1));
+          pathSegments: asset.uri.pathSegments.sublist(webIndex + 1));
       urls.add(url.toString());
       counter++;
     }

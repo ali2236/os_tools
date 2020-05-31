@@ -1,3 +1,10 @@
+targets:
+  $default:
+    builders:
+      static_aligator_ir|relocation_builder:
+        enabled: true
+      static_aligator_ir|cleanup_builder:
+        enabled: true
 builders:
   markdown_builder:
     import: "package:static_aligator_ir/builders.dart"
@@ -20,6 +27,11 @@ builders:
     applies_builders:
       - markdown_builder
 post_process_builders:
+  relocation_builder:
+    import: "package:static_aligator_ir/builders.dart"
+    builder_factory: relocationBuilder
+    input_extensions:
+      - .html
   cleanup_builder:
     import: "package:static_aligator_ir/builders.dart"
     builder_factory: cleanupBuilder

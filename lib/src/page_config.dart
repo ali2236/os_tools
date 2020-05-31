@@ -6,12 +6,14 @@ import 'package:yaml/yaml.dart';
 class PageConfig {
   final String title;
   final String tags;
+  final String url;
   final List imports;
 
   PageConfig(YamlMap config)
       : title = config['title'] ?? 'Aligator',
         tags = config['tags'] ?? 'no tag',
-        imports = config['imports'] ?? [];
+        imports = config['imports'] ?? [],
+        url = config['url'];
 
   Future<Map<String, dynamic>> getConfigs() async {
     final configData = <String, dynamic>{

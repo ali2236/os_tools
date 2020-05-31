@@ -9,10 +9,14 @@ import 'package:static_aligator_ir/plugin_registry.dart';
 import 'package:static_aligator_ir/src/page_config.dart';
 import 'package:static_aligator_ir/src/template_loader.dart';
 import 'package:yaml/yaml.dart';
+import 'package:path/path.dart' as path;
 
 Builder markdownBuilder(options) => MarkdownBuilder();
 
 class MarkdownBuilder implements Builder {
+
+  static final Map<String, String> urls = {};
+
   @override
   Map<String, List<String>> get buildExtensions => {
         '.md': ['.html'],
@@ -35,6 +39,10 @@ class MarkdownBuilder implements Builder {
     final config = loadYaml(configString) as YamlMap;
     final pageConfig = PageConfig(config);
     final configData = await pageConfig.getConfigs();
+    
+    if(pageConfig.url != null){
+      urls[output.path] = 'web${path.withoutExtension(pageConfig.url)}.html';
+    }
 
     final template = AssetId(buildStep.inputId.package,
         'web/templates/' + config['template'] ?? 'index.mustache');
