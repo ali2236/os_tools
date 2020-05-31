@@ -1,0 +1,21 @@
+---
+reader: csv
+entry: anime_list
+schema: "name,ep,len,score"
+---
+Gyakkyou Burai Kaiji: Ultimate Survivor, 26, 23, 10
+Gyakkyou Burai Kaiji: Hakairoku-hen, 26, 24, 10
+Shingeki no Kyojin Season 3 Part 2, 10, 23, 10
+Bungou Stray Dogs 3rd Season, 12, 23, 10
+Monster, 74, 24, 10
+Arslan Senki, 25, 24, 10
+Touhai Densetsu Akagi: Yami ni Maiorita Tensai, 26, 23, 10
+Code Geass: Hangyaku no Lelouch, 25, 24, 10
+Overlord, 13, 24, 10
+Ixion Saga DT, 25, 24, 10
+Nanatsu no Taizai: Imashime no Fukkatsu, 24, 24, 10
+JoJo no Kimyou na Bouken, 26, 24, 10
+Fullmetal Alchemist(2003), 51, 24, 10
+Yakusoku no Neverland, 12, 22, 10
+Kuroshitsuji II, 12, 24, 10
+Death Note, 37, 23, 10
