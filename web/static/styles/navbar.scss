@@ -1,0 +1,22 @@
+nav {
+  box-shadow: green($color: #000000);
+}
+
+.navbar {
+  width: 100%;
+  border-bottom: 1px solid black;
+  position: relative;
+
+  .title {
+    font-size: xx-large;
+  }
+  
+  ul {
+    display: inline;
+
+    li {
+      
+    }
+  }
+
+}
