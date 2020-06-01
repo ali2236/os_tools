@@ -1,7 +1,7 @@
 ---
-reader: csv
+importer: csv
 entry: projects
-schema: "name,about"
+schema: name, about
 ---
 Prayer Times, A Prayer Times App With a Calendar
 Aligator.ir, My Personal Site where I conduct my experiments

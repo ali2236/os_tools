@@ -2,7 +2,7 @@
 title: Test
 category: Random
 tags: code, dart
-template: index.mustache
+template: web/templates/index.mustache
     
 ---
 

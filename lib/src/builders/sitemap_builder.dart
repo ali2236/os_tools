@@ -18,7 +18,7 @@ class SitemapBuilder implements Builder {
 
   @override
   Map<String, List<String>> get buildExtensions => {
-        r'$package$': ['web/sitemap.xml']
+        r'$package$': ['web/sitemap.xml', 'web/robot.txt']
       };
 
   @override
@@ -54,5 +54,9 @@ class SitemapBuilder implements Builder {
     await buildStep.writeAsString(
         output, builder.build().toXmlString(pretty: true));
     log.info('built sitemap with $counter entries.');
+
+    final robot = AssetId(buildStep.inputId.package, 'web/robot.txt');
+    final robotTxt = 'User-Agent: *\nDisallow:\n\nSitemap: http://www.aligator.ir/sitemap.xml';
+    await buildStep.writeAsString(robot, robotTxt);
   }
 }

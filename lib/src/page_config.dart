@@ -1,24 +1,31 @@
 import 'dart:io';
-
-import 'package:static_aligator_ir/src/data_reader.dart';
+import 'package:build/build.dart';
+import 'package:static_aligator_ir/src/importers/importers.dart';
 import 'package:yaml/yaml.dart';
 
 class PageConfig {
   final String title;
   final String tags;
   final String url;
+  final String _template;
   final List imports;
+  final data;
 
   PageConfig(YamlMap config)
       : title = config['title'] ?? 'Aligator',
         tags = config['tags'] ?? 'no tag',
         imports = config['imports'] ?? [],
-        url = config['url'];
+        url = config['url'],
+        _template = config['template'],
+        data = config['data'];
+
+  AssetId getTemplate(String package) => AssetId(package, _template);
 
   Future<Map<String, dynamic>> getConfigs() async {
     final configData = <String, dynamic>{
       'title': title,
       'tags': tags,
+      'data': data,
     };
 
     await Future.forEach(imports, (import) async {
@@ -30,13 +37,13 @@ class PageConfig {
 
       final configString = source.substring(configStart + 3, configEnd);
       final config = loadYaml(configString) as YamlMap;
-      final readerId = config['reader'];
+      final importerId = config['importer'];
       final entry = config['entry'] as String;
 
       final content = source.substring(configEnd + 3);
 
-      final reader = readers.getReader(readerId);
-      final read = reader.read(content, config);
+      final importer = importers.getImporter(importerId);
+      final read = importer.import(content, Map<String, dynamic>.from(config));
 
       configData.addAll({entry: read});
     });

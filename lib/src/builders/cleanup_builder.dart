@@ -7,13 +7,16 @@ PostProcessBuilder cleanupBuilder(options) => CleanUpBuilder();
 
 class CleanUpBuilder extends FileDeletingBuilder implements PostProcessBuilder{
 
-  CleanUpBuilder() : super(['.md','.mustache'], isEnabled: true);
+  CleanUpBuilder() : super(['.md','.mustache','.mustacheslug'], isEnabled: true);
 
   @override
   FutureOr<Null> build(PostProcessBuildStep buildStep) async{
     super.build(buildStep);
-    log.fine('deleted ${buildStep.inputId.path}');
+    //log.fine('deleted ${buildStep.inputId.path}');
     return null;
   }
+
+  @override
+  String toString() => 'cleanup_builder';
 
 }

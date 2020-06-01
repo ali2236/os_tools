@@ -34,4 +34,7 @@ class RelocationBuilder extends PostProcessBuilder {
 
   @override
   final inputExtensions = const ['.html'];
+
+  @override
+  String toString() => 'relocation_builder';
 }

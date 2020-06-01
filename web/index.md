@@ -2,7 +2,7 @@
 title: Aligator
 category: Random
 tags: about aligator, aligator, ali ghanbari
-template: index.mustache
+template: web/templates/index.mustache
 ---
 
 # Ali "Aligator" Ghanbari
