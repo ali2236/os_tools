@@ -4,7 +4,7 @@ category: Random
 tags: code, projects
 template: web/templates/index.mustache
 imports: 
-    - web/content/projects.csv
+    - web/content/data/projects.csv
 ---
 
 # Projects:
