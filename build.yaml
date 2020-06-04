@@ -4,20 +4,8 @@ targets:
       static_aligator_ir|relocation_builder:
         enabled: true
       static_aligator_ir|cleanup_builder:
-        enabled: true
+        enabled: false
 builders:
-  template_builder:
-    import: "package:static_aligator_ir/builders.dart"
-    builder_factories:
-      - templateBuilder
-    build_extensions:
-      .mustache:
-        - .mustacheslug
-    runs_before:
-      - markdown_builder
-    auto_apply: root_package
-    required_inputs:
-      - .mustache
   markdown_builder:
     import: "package:static_aligator_ir/builders.dart"
     builder_factories:
