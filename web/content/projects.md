@@ -2,9 +2,10 @@
 title: Projects!
 category: Random
 tags: code, projects
-template: web/templates/index.mustache
+template: index.mustache
+url: /projects
 imports: 
-    - web/content/data/projects.csv
+    - content/projects.csv
 ---
 
 # Projects:

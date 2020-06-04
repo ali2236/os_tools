@@ -1,12 +1,12 @@
 ---
 title: Anime List
 tags: Anime, aligator Anime, ali ghanbari Anime
-template: web/templates/index.mustache
+template: index.mustache
 url: /anime
 partials:
-    - web/templates/anime.mustache
+    - content/anime.mustache
 imports:
-    - web/content/data/anime.csv
+    - content/anime.csv
 ---
 # My Anime List
 

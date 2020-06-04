@@ -5,5 +5,6 @@ void main() {
   for(var anime in querySelectorAll('.anime')){
     watchTime += int.tryParse(anime.attributes['ep']) * int.tryParse(anime.attributes['len']);
   }
-  querySelector('#anime-watchtime').text = watchTime.toString();
+  querySelector('#anime-watchtime-hours').text = (watchTime ~/ 60).toString();
+  querySelector('#anime-watchtime-minutes').text = (watchTime % 60).toString();
 }
