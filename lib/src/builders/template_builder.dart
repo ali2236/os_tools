@@ -21,13 +21,13 @@ class TemplateBuilder extends Builder {
     log.fine('added $name');
 
     await buildStep.writeAsString(
-        buildStep.inputId.changeExtension('.mustacheslug'), '');
+        buildStep.inputId.changeExtension('.mustacheslug'), '$name added');
   }
 
   Glob get mustacheFiles => Glob('web/**.mustache');
 
   @override
   final Map<String, List<String>> buildExtensions = {
-    r'.mustache': ['.mustacheslug']
+    r'.mustache': ['.mustacheslug'],
   };
 }

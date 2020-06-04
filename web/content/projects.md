@@ -11,7 +11,8 @@ imports:
 
 ## A list of my projects:
 <div>
-{{#projects }}
+{{#projects}}
+{{#valid}}
 <div>
 <div>
 {{ name }}
@@ -20,5 +21,6 @@ imports:
 {{ about }}
 </div>
 </div>
-{{/projects }}
+{{/valid}}
+{{/projects}}
 </div>

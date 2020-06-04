@@ -1,6 +1,17 @@
-<div class="uk-card uk-card-default">
-    <div class="uk-card-media-top">
-        <img src="" alt="">
+<p>Watched a total of <span id="anime-watchtime"></span> hours of anime</p>
+<div>
+    <div class="uk-grid-small uk-grid-match uk-text-center uk-child-width-auto" uk-grid>
+        {{#anime_list}}
+            {{#valid}}
+                <div class="anime" anime-id="{{id}}" ep="{{ep}}" len="{{len}}" score="{{score}}">
+                    <div class="uk-card uk-card-default uk-card-body uk-inline uk-padding-remove anime-card-width anime-card-height">
+                        <img class="anime-card-height" src="/static/upload/images/anime/{{id}}.jpg" alt="{{id}}_img">
+                        <div class="uk-overlay uk-position-bottom uk-padding-remove">
+                            <p class="uk-text-small color-white uk-text-top text-background-dark anime-card-width">{{ name }}</p>
+                        </div>
+                    </div>
+                </div>
+            {{/valid}}
+        {{/anime_list}}
     </div>
-    <div class="uk-card-body">{{ name }}</div>
 </div>

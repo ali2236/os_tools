@@ -1,4 +1,4 @@
-@import 'milligram/milligram';
+//@import 'milligram/milligram';
 
 body {
     color: rgba(0,0,0,.87);
@@ -9,4 +9,20 @@ p {
     font-size: large;
 }
 
-@import 'navbar';
+.color-white {
+    color: white;
+}
+
+.text-background-dark {
+    background-color: black;
+}
+
+.anime-card-width {
+    max-width: 225px !important;
+}
+
+.anime-card-height {
+    max-height: 320px !important;
+}
+
+//@import 'navbar';
