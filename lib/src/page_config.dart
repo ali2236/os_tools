@@ -29,9 +29,8 @@ class PageConfig {
         data = config['data'],
         transformers =
             List<String>.from(config['transformers'] ?? ['markdown']),
-        partials = List<String>.from(config['partials'] ?? []);
-
-
+        partials = List<String>.from(config['partials'] ?? []),
+        assert(config['template'] != null, 'template must not be null');
 
   Future<Map<String, dynamic>> getConfigs() async {
     final configData = <String, dynamic>{
@@ -45,7 +44,6 @@ class PageConfig {
     /// using the appropriate importer
     ///
     await Future.forEach(imports, (importPath) async {
-
       ///
       ///  remove the dot from index 0
       ///
@@ -65,7 +63,6 @@ class PageConfig {
       /// read the asset file
       ///
       final source = await buildStep.readAsString(importAsset);
-
 
       ///
       /// we can get the [config] & the [contents] of the file using [FileSource]
@@ -132,9 +129,7 @@ class PageConfig {
     return await buildStep.readAsString(_getAsset(_template));
   }
 
-
   AssetId _getAsset(String filePath) {
-
     ///
     /// abbreviation
     ///

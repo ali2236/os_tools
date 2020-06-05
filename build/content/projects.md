@@ -2,25 +2,16 @@
 title: Projects!
 category: Random
 tags: code, projects
-template: web/templates/index.mustache
+template: index.mustache
+url: /projects
 imports: 
-    - web/content/data/projects.csv
+    - ./projects.json
 ---
 
 # Projects:
 
 ## A list of my projects:
-<div>
-{{#projects}}
-{{#valid}}
-<div>
-<div>
-{{ name }}
+<div id="projects">
+
 </div>
-<div>
-{{ about }}
-</div>
-</div>
-{{/valid}}
-{{/projects}}
-</div>
+

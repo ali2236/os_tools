@@ -16,15 +16,12 @@ class FileSource {
 
   FileSource(this.source, {this.separator = '---'});
 
-  bool _hasHeader = true;
-
   int _configStart, _configEnd;
 
   ///
   /// returns true if the file doesn't seem to have a header
   ///
-  bool get hasHeader =>
-      _hasHeader ??= (configStart - separator.length) == -1 && configEnd == -1;
+  bool get hasHeader => (configStart - separator.length) != -1;
 
   ///
   /// returns the index after the separator
@@ -50,12 +47,10 @@ class FileSource {
   ///     ---
   ///     File Contents
   ///
-  Map<String, dynamic> getConfig(
-      {String importer = 'yaml', Map importerConfig = const {}}) {
-    if(hasHeader) {
+  Map<String, dynamic> getConfig({String importer = 'yaml', Map config}) {
+    if (hasHeader) {
       final configString = source.substring(configStart, configEnd);
-      return importers.getImporter(importer).import(
-          configString, importerConfig);
+      return importers.getImporter(importer).import(configString, config ?? {});
     } else {
       return const {};
     }
@@ -65,7 +60,7 @@ class FileSource {
   /// The contents of the file, starting from after the [configEnd] separator
   ///
   String getContents() {
-    if(hasHeader){
+    if (hasHeader) {
       return source.substring(configEnd + separator.length);
     } else {
       return source;

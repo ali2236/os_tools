@@ -1,3 +1,4 @@
+import 'package:static_aligator_ir/src/importers/json_importer.dart';
 import 'package:static_aligator_ir/src/importers/yaml_importer.dart';
 
 import 'csv_importer.dart';
@@ -5,6 +6,7 @@ import 'csv_importer.dart';
 final importers = ImporterRegistry({
   'csv': CsvImporter(),
   'yaml':YamlImporter(),
+  'json':JsonImporter(),
 });
 
 class ImporterRegistry {
