@@ -5,23 +5,13 @@ tags: code, projects
 template: index.mustache
 url: /projects
 imports: 
-    - content/projects.csv
+    - ./projects.json
 ---
 
 # Projects:
 
 ## A list of my projects:
-<div>
-{{#projects}}
-{{#valid}}
-<div>
-<div>
-{{ name }}
+<div id="projects">
+
 </div>
-<div>
-{{ about }}
-</div>
-</div>
-{{/valid}}
-{{/projects}}
-</div>
+

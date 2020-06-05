@@ -1,5 +1,4 @@
 ---
-importer: csv
 entry: anime_list
 schema: id, name, ep, len, score
 ---
