@@ -1,0 +1,26 @@
+<p>Watched a total of <span id="anime-watchtime-hours"></span> hours and <span id="anime-watchtime-minutes"></span>
+    minutes of anime.</p>
+<div>
+    <div class="uk-grid-small uk-grid-match uk-text-center uk-child-width-auto" uk-grid>
+        {{#anime_list}}
+            {{#valid}}
+                <div class="anime" anime-id="{{id}}" ep="{{ep}}" len="{{len}}" score="{{score}}">
+                    <div class="uk-card uk-card-default uk-card-body uk-inline uk-padding-remove anime-card-width uk-animation-fade">
+                        <img class="anime-poster anime-card-height" src="/static/upload/images/anime/{{id}}.jpg" alt="{{id}}_img" loading="lazy">
+                        <div class="uk-overlay uk-position-top uk-padding-remove color-white">
+                            <div class="anime-info">
+                                <p>Episodes: {{ep}}</p>
+                                <p>Episode Length: {{len}}</p>
+                                <p>My Score: {{score}}/10</p>
+                            </div>
+                        </div>
+                        <div class="uk-overlay uk-position-bottom uk-padding-remove">
+                            <p class="uk-text-small color-white uk-text-top text-background-dark anime-card-width">{{ name }}</p>
+                        </div>
+                    </div>
+                </div>
+            {{/valid}}
+        {{/anime_list}}
+    </div>
+    <br/>
+</div>
