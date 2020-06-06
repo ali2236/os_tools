@@ -4,9 +4,9 @@ tags: Anime, aligator Anime, ali ghanbari Anime
 template: index.mustache
 url: /anime
 partials:
-    - content/anime.mustache
+    - ./anime.mustache
 imports:
-    - content/anime.csv
+    - ./anime.csv
 ---
 # My Anime List
 
