@@ -23,6 +23,12 @@ p {
     max-height: 320px !important;
 }
 
+.anime-poster {
+    max-height: 320px;
+    width: 225px !important;
+    clip: auto;
+}
+
 .anime-info {
     visibility: hidden;
 }
