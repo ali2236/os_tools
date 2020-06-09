@@ -29,12 +29,12 @@ p {
     clip: auto;
 }
 
-.anime-info {
-    visibility: hidden;
-}
-
-.anime-info:hover {
-    visibility: visible !important;
+.anime-score {
+    color: white;
+    font-weight: bold;
+    background-color: gold;
+    border-color: gold;
+    border-radius: 100%;
 }
 
 .aligator {

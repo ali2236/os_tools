@@ -4,15 +4,15 @@
     <loc>http://www.aligator.ir/content/about.html</loc>
   </url>
   <url>
-    <loc>http://www.aligator.ir/content/fanoos.html</loc>
-  </url>
-  <url>
-    <loc>http://www.aligator.ir/index.html</loc>
-  </url>
-  <url>
     <loc>http://www.aligator.ir/content/anime/anime.html</loc>
   </url>
   <url>
+    <loc>http://www.aligator.ir/content/fanoos.html</loc>
+  </url>
+  <url>
     <loc>http://www.aligator.ir/content/projects/projects.html</loc>
+  </url>
+  <url>
+    <loc>http://www.aligator.ir/index.html</loc>
   </url>
 </urlset>

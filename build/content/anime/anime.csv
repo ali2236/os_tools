@@ -5,6 +5,8 @@ schema: id, name, ep, len, score
 kaiji-s1, Gyakkyou Burai Kaiji: Ultimate Survivor, 26, 23, 10
 kaiji-s2, Gyakkyou Burai Kaiji: Hakairoku-hen, 26, 24, 10
 attack-on-titan-s3-p2, Shingeki no Kyojin Season 3 Part 2, 10, 23, 10
+attack-on-titan-s3-p1, Shingeki no Kyojin Season 3, 12, 23, 10
+attack-on-titan-s2, Shingeki no Kyojin Season 2, 12, 24, 10
 bungou-stray-dogs-s3, Bungou Stray Dogs 3rd Season, 12, 23, 10
 monster, Monster, 74, 24, 10
 arslan-senki-s1, Arslan Senki, 25, 24, 10
@@ -27,6 +29,7 @@ the-saga-of-tanya-the-evil, Youjo Senki, 12, 24, 9
 vinland-saga, Vinland Saga, 24, 24, 9
 re-zero-s1, Re:Zero kara Hajimeru Isekai Seikatsu, 25, 25, 9
 gto, Great Teacher Onizuka, 43, 25, 9
+attack-on-titan-s1, Shingeki no Kyojin, 25, 24, 9
 rainbow, Rainbow: Nisha Rokubou no Shichinin, 26, 22, 9
 jojo-s3, JoJo no Kimyou na Bouken Part 3: Stardust Crusaders 2nd Season, 24, 23, 9
 jojo-s2, JoJo no Kimyou na Bouken Part 3: Stardust Crusaders,24, 24, 9
@@ -74,6 +77,7 @@ seven-deadly-sins-s1, Nanatsu no Taizai, 24, 24, 8
 attack-on-titan-junior-high, Shingeki! Kyojin Chuugakkou, 12, 17, 8
 goblin-slayer, Goblin Slayer, 12, 23, 8
 kokkoku, Kokkoku, 12, 23, 8
+ippo-s1, Hajime no Ippo: Rising, 25, 22, 8
 kono-suba-s2, Kono Subarashii Sekai ni Shukufuku wo! 2, 10, 23, 7
 jojo-s4, JoJo no Kimyou na Bouken Part 4: Diamond wa Kudakenai, 39, 23, 7
 overlord-ple-ple-2, Overlord: Ple Ple Pleiades 2, 13, 2, 7
@@ -83,6 +87,7 @@ blood-lad, Blood Lad, 10, 24, 7
 psycho-pass-s2, Psycho-Pass 2, 11, 23, 7
 demon-slayer-s1, Kimetsu no Yaiba, 26, 24, 7
 death-parade, Death Parade, 12, 23, 7
+attack-on-titan-lost-girls, Shingeki no Kyojin: Lost Girls, 3, 25, 7
 black-lagoon-s2, Black Lagoon: The Second Barrage, 12, 24, 7
 one-punch-man-s1, One Punch Man, 12, 24, 7
 tejina-senpai, Tejina-senpai, 12, 13, 7
@@ -90,6 +95,7 @@ gintama-s1, Gintama, 201, 24, 7
 tokyo-ghoul-s3, Tokyo Ghoul:re, 12, 24, 7
 gintama-s2, Gintama', 51, 24, 7
 gintama-s5, Gintama., 12, 24, 7
+gintama-s6, Gintama.: Shirogane no Tamashii-hen - Kouhan-sen, 14, 24, 7
 isekai-quartet-s1, Isekai Quartet, 12, 12, 6
 isekai-quartet-s2, Isekai Quartet 2, 12, 12, 6
 no-game-no-life, No Game No Life, 12, 23, 6

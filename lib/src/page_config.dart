@@ -1,3 +1,4 @@
+import 'package:abstarct_date/abstarct_date.dart';
 import 'package:build/build.dart';
 import 'package:mustache/mustache.dart';
 import 'package:path/path.dart' as path;
@@ -37,6 +38,7 @@ class PageConfig {
       'title': title,
       'tags': tags,
       'data': data,
+      'date': Date<GregorianDate>.now().formatBuilder((d) => '${d.DDDD}, ${d.MMMM} ${d.dd}, ${d.yyyy}'),
     };
 
     ///
