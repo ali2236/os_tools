@@ -12,4 +12,4 @@ imports:
 
 {{> anime}}
 
-<script src="static/scripts/anime.dart.js"></script>
+<script src="static/scripts/watchtime.dart.js"></script>

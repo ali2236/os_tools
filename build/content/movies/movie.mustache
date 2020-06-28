@@ -3,11 +3,11 @@
 <p class="uk-text-small uk-text-muted">last updated {{ date }}</p>
 <div>
     <div class="uk-grid-small uk-grid-match uk-text-center uk-child-width-auto" uk-grid>
-        {{#anime}}
+        {{#movies}}
             {{#valid}}
                 <div class="watchable" id="{{id}}" ep="{{ep}}" len="{{len}}" score="{{score}}">
                     <div class="uk-card uk-card-default uk-card-body uk-inline uk-padding-remove anime-card-width uk-animation-fade">
-                        <img class="anime-poster anime-card-height" src="/static/upload/images/anime/{{id}}.jpg" alt="{{id}}_img" loading="lazy">
+                        <img class="anime-poster anime-card-height" src="/static/upload/images/movies/{{id}}.jpg" alt="{{id}}_img" loading="lazy">
                         <div class="uk-overlay uk-position-top-right uk-padding-remove">
                             <p class="uk-background-secondary uk-text-small uk-text-warning" style="padding: 4px">{{score}}</p>
                         </div>
@@ -17,7 +17,7 @@
                     </div>
                 </div>
             {{/valid}}
-        {{/anime}}
+        {{/movies}}
     </div>
     <br/>
 </div>

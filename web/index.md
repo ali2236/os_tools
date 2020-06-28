@@ -9,6 +9,8 @@ template: index.mustache
 
 [Anime](/anime.html)
 
+[Movies](/movies.html)
+
 [Projects](/projects.html)
 
 [About](/about.html)

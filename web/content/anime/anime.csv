@@ -1,7 +1,4 @@
----
-entry: anime_list
-schema: id, name, ep, len, score
----
+id,name,ep,len,score
 kaiji-s1, Gyakkyou Burai Kaiji: Ultimate Survivor, 26, 23, 10
 kaiji-s2, Gyakkyou Burai Kaiji: Hakairoku-hen, 26, 24, 10
 attack-on-titan-s3-p2, Shingeki no Kyojin Season 3 Part 2, 10, 23, 10

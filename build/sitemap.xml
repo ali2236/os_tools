@@ -10,12 +10,15 @@
     <loc>http://www.aligator.ir/content/fanoos.html</loc>
   </url>
   <url>
+    <loc>http://www.aligator.ir/content/movies/movie.html</loc>
+  </url>
+  <url>
+    <loc>http://www.aligator.ir/content/projects/prayertimes.html</loc>
+  </url>
+  <url>
     <loc>http://www.aligator.ir/content/projects/projects.html</loc>
   </url>
   <url>
     <loc>http://www.aligator.ir/index.html</loc>
-  </url>
-  <url>
-    <loc>http://www.aligator.ir/content/projects/prayertimes.html</loc>
   </url>
 </urlset>

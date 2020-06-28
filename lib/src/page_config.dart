@@ -3,7 +3,6 @@ import 'package:build/build.dart';
 import 'package:mustache/mustache.dart';
 import 'package:path/path.dart' as path;
 import 'package:static_aligator_ir/builders.dart';
-import 'package:static_aligator_ir/src/file_source.dart';
 import 'package:static_aligator_ir/src/importers/importers.dart';
 import 'package:yaml/yaml.dart';
 
@@ -38,7 +37,8 @@ class PageConfig {
       'title': title,
       'tags': tags,
       'data': data,
-      'date': Date<GregorianDate>.now().formatBuilder((d) => '${d.DDDD}, ${d.MMMM} ${d.dd}, ${d.yyyy}'),
+      'date': Date<GregorianDate>.now()
+          .formatBuilder((d) => '${d.DDDD}, ${d.MMMM} ${d.dd}, ${d.yyyy}'),
     };
 
     ///
@@ -46,6 +46,8 @@ class PageConfig {
     /// using the appropriate importer
     ///
     await Future.forEach(imports, (importPath) async {
+      log.fine('importing ${importPath}');
+
       ///
       ///  remove the dot from index 0
       ///
@@ -67,21 +69,14 @@ class PageConfig {
       final source = await buildStep.readAsString(importAsset);
 
       ///
-      /// we can get the [config] & the [contents] of the file using [FileSource]
-      ///
-      final fileSource = FileSource(source);
-      final config = fileSource.getConfig();
-      final content = fileSource.getContents();
-
-      ///
       /// config
       ///
-      final entry = config['entry'] ?? name;
+      final entry = name;
 
       /// Importing
       final importer = importers.getImporter(extension);
       log.fine('importing using $extension');
-      final read = importer.import(content, Map<String, dynamic>.from(config));
+      final read = importer.import(source, const {});
       log.fine('import done');
       //////////////////////////////
 

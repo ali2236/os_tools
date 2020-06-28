@@ -1061,16 +1061,16 @@ _.a=a
 _.b=b
 _.c=-1
 _.d=null
-_.$ti=c},ab:function ab(){},ac:function ac(){},ah:function ah(){},ai:function ai(){}},T={
+_.$ti=c},ab:function ab(){},ac:function ac(){},ah:function ah(){},ai:function ai(){}},S={
 bC:function(){var t,s,r,q,p
-for(t=u.h,s=document,H.cz(t,t,"T","querySelectorAll"),t=u.R,r=new W.R(s.querySelectorAll(".anime"),t),t=new H.G(r,r.gi(r),t.n("G<j.E>")),q=0;t.k();){r=t.d
+for(t=u.h,s=document,H.cz(t,t,"T","querySelectorAll"),t=u.R,r=new W.R(s.querySelectorAll(".watchable"),t),t=new H.G(r,r.gi(r),t.n("G<j.E>")),q=0;t.k();){r=t.d
 p=H.bd(r.getAttribute("ep"),null)
 r=H.bd(r.getAttribute("len"),null)
 if(typeof p!=="number")return p.J()
 if(typeof r!=="number")return H.bA(r)
-q+=p*r}s.querySelector("#anime-watchtime-hours").textContent=C.b.h(C.b.F(q,60))
-s.querySelector("#anime-watchtime-minutes").textContent=C.b.h(C.b.C(q,60))}}
-var w=[C,H,J,P,W,T]
+q+=p*r}s.querySelector("#watchtime-hours").textContent=C.b.h(C.b.F(q,60))
+s.querySelector("#watchtime-minutes").textContent=C.b.h(C.b.C(q,60))}}
+var w=[C,H,J,P,W,S]
 hunkHelpers.setFunctionNamesIfNecessary(w)
 var $={}
 H.aQ.prototype={}
@@ -1490,6 +1490,6 @@ return}if(typeof document.currentScript!='undefined'){a(document.currentScript)
 return}var t=document.scripts
 function onLoad(b){for(var r=0;r<t.length;++r)t[r].removeEventListener("load",onLoad,false)
 a(b.target)}for(var s=0;s<t.length;++s)t[s].addEventListener("load",onLoad,false)})(function(a){v.currentScript=a
-if(typeof dartMainRunner==="function")dartMainRunner(T.bC,[])
-else T.bC([])})})()
-//# sourceMappingURL=anime.dart.js.map
+if(typeof dartMainRunner==="function")dartMainRunner(S.bC,[])
+else S.bC([])})})()
+//# sourceMappingURL=watchtime.dart.js.map
