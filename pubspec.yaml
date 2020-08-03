@@ -16,7 +16,7 @@ dependencies:
   path: ^1.7.0
 
   csv: ^4.0.3
-  xml:
+  xml: ^4.3.0
   yaml: ^2.2.1
   mustache: ^1.1.1
   markdown: ^2.1.4
