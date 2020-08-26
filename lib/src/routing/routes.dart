@@ -1,16 +1,15 @@
 import 'package:angular_router/angular_router.dart';
 
 import '../components/pages/about_page.template.dart' as about;
-import '../components/pages/index_page.template.dart' as index;
 import '../components/pages/projects_page.template.dart' as projects;
 import '../components/pages/show_page.template.dart' as showPage;
 import 'route_paths.dart';
 
 class Routes {
   static final all = <RouteDefinition>[
-    RouteDefinition(
+    RouteDefinition.redirect(
       path: '',
-      component: index.IndexPageNgFactory,
+      redirectTo: RoutePaths.about.toUrl(),
     ),
     RouteDefinition(
       routePath: RoutePaths.animeList,

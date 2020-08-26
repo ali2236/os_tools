@@ -1,8 +1,16 @@
 
 body {
-    color: rgba(0,0,0,.87);
+    color: #556175;
     background-color: #262D39;
     margin: 0;
+}
+
+.text-light {
+    color: #C7DBD8;
+}
+
+.text-dark {
+    color: #556175;
 }
 
 p {
@@ -37,24 +45,4 @@ p {
     background-color: gold;
     border-color: gold;
     border-radius: 100%;
-}
-
-.aligator {
-
-    .ag-navbar {
-        background-color: #FFFFFF;
-        box-shadow: 0 4px 4px rgba(0, 0, 0, .2);
-        margin-bottom: 8px;
-    }
-
-    .ag-footer {
-        background-color: #1B1C1D;
-    }
-}
-
-.fanoos {
-
-    .ag-background {
-        background-color: #00BFA5;
-    }
 }
