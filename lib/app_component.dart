@@ -11,9 +11,7 @@ import 'package:static_aligator_ir/src/services/show_service.dart';
   selector: 'aligator',
   template: '''
     <nav-bar></nav-bar>
-    <div class="uk-container">
-      <router-outlet [routes]="Routes.all"></router-outlet>
-    </div>
+    <router-outlet [routes]="Routes.all"></router-outlet>
   ''',
   directives: [
     coreDirectives,
