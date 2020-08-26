@@ -9,7 +9,9 @@ import '../markdown_component.dart';
 @Component(
   selector: 'about-page',
   template: '''
-  <div class="uk-container"><markdown value="{{content | async}}"></markdown></div>
+  <div class="container">
+    <markdown value="{{content | async}}"></markdown>
+  </div>
   ''',
   directives: [MarkdownComponent],
   pipes: [commonPipes,MarkdownPipe],

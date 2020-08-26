@@ -1,17 +1,49 @@
+$ag-accent:#00BFA5;
+$ag-background:#262D39;
+$ag-background-dark:#1D2531;
+$ag-text-light:#C7DBD8;
+$ag-text-dark:#556175;
 
-body {
-    color: #556175;
-    background-color: #262D39;
-    margin: 0;
+.ag-background {
+    background-color: $ag-background;
 }
 
-.text-light {
-    color: #C7DBD8;
+.ag-background-dark {
+    background-color: $ag-background-dark;
 }
 
-.text-dark {
-    color: #556175;
+.ag-text-light {
+    color: $ag-text-light;
 }
+
+.ag-text-dark {
+    color: $ag-text-dark;
+}
+
+.ag-text-accent {
+    color: $ag-accent;
+}
+
+$body-bg: $ag-background;
+$body-color: $ag-text-light;
+
+@import "bootstrap/bootstrap";
+
+.navbar-dark .navbar-nav .nav-link {
+    color: $ag-text-dark;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover{
+    color: $ag-text-light;
+}
+
+.navbar-dark .navbar-nav .nav-link.active{
+    color: $ag-accent;
+}
+
+
+
+
 
 p {
     font-size: large;

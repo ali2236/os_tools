@@ -7,13 +7,13 @@ import '../show_card_component.dart';
 @Component(
   selector: 'show-page',
   template: '''
-  <div class="uk-grid-small uk-grid-match uk-text-center uk-child-width-auto uk-ce" uk-grid>
+  <div class="row">
     <div *ngFor="let show of shows">
       <show-card [show]="show"></show-card>
     </div>
    </div>
   ''',
-  directives: [coreDirectives ,ShowCard],
+  directives: [coreDirectives, ShowCard],
 )
 class ShowPage with OnInit {
   @Input('show-type')
@@ -37,21 +37,23 @@ class ShowPage with OnInit {
 <p class="uk-text-small uk-text-muted">last updated {{ date }}</p>*/
 
 @Component(
-  template: '''
+    template: '''
+  <div class="container">
   <h1>My Anime List</h1>
   <show-page show-type="anime"></show-page>
+  </div>
   ''',
-  selector: 'anime-page',
-  directives: [ShowPage]
-)
+    selector: 'anime-page',
+    directives: [ShowPage])
 class AnimePage {}
 
 @Component(
-  template: '''
+    template: '''
+  <div class="container">
   <h1>My Movie List</h1>
   <show-page show-type="movies"></show-page>
+  </div>
   ''',
-  selector: 'movies-page',
-  directives: [ShowPage]
-)
+    selector: 'movies-page',
+    directives: [ShowPage])
 class MoviePage {}
