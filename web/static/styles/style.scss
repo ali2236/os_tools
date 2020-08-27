@@ -24,29 +24,25 @@ $ag-text-dark:#556175;
     color: $ag-accent;
 }
 
-$body-bg: $ag-background;
-$body-color: $ag-text-light;
-
+@import "fonts/fonts";
 @import "bootstrap/bootstrap";
 
-.navbar-dark .navbar-nav .nav-link {
-    color: $ag-text-dark;
+.nav-link {
+    font-family: 'Comfortaa', cursive;
 }
 
-.navbar-dark .navbar-nav .nav-link:hover{
-    color: $ag-text-light;
+h1 {
+    font-family: 'nerisblack';
 }
-
-.navbar-dark .navbar-nav .nav-link.active{
-    color: $ag-accent;
-}
-
-
-
-
 
 p {
-    font-size: large;
+    font-family: 'Quicksand', sans-serif;
+}
+
+h6 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: light;
+    color: $ag-text-dark;
 }
 
 .color-white {

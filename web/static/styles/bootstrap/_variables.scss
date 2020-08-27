@@ -1,3 +1,9 @@
+$ag-accent:#00BFA5;
+$ag-background:#262D39;
+$ag-background-dark:#1D2531;
+$ag-text-light:#C7DBD8;
+$ag-text-dark:#556175;
+
 // Variables
 //
 // Variables should follow the `$component-state-property-size` formula for
@@ -170,8 +176,8 @@ $sizes: map-merge(
 //
 // Settings for the `<body>` element.
 
-$body-bg:                   $white !default;
-$body-color:                $gray-900 !default;
+$body-bg: $ag-background;
+$body-color: $ag-text-light;
 
 
 // Links
@@ -239,10 +245,10 @@ $grid-row-columns:            6 !default;
 $line-height-lg:              1.5 !default;
 $line-height-sm:              1.5 !default;
 
-$border-width:                1px !default;
+$border-width:                0px;
 $border-color:                $gray-300 !default;
 
-$border-radius:               .25rem !default;
+$border-radius:               0px;
 $border-radius-lg:            .3rem !default;
 $border-radius-sm:            .2rem !default;
 
@@ -721,7 +727,7 @@ $nav-divider-margin-y:              $spacer / 2 !default;
 
 // Navbar
 
-$navbar-padding-y:                  $spacer / 2 !default;
+$navbar-padding-y:                  $spacer;
 $navbar-padding-x:                  $spacer !default;
 
 $navbar-nav-link-padding-x:         .5rem !default;
@@ -737,9 +743,9 @@ $navbar-toggler-padding-x:          .75rem !default;
 $navbar-toggler-font-size:          $font-size-lg !default;
 $navbar-toggler-border-radius:      $btn-border-radius !default;
 
-$navbar-dark-color:                 rgba($white, .5) !default;
-$navbar-dark-hover-color:           rgba($white, .75) !default;
-$navbar-dark-active-color:          $white !default;
+$navbar-dark-color:                 $ag-text-dark;
+$navbar-dark-hover-color:           $ag-text-light;
+$navbar-dark-active-color:          $ag-accent;
 $navbar-dark-disabled-color:        rgba($white, .25) !default;
 $navbar-dark-toggler-icon-bg:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path stroke='#{$navbar-dark-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !default;
 $navbar-dark-toggler-border-color:  rgba($white, .1) !default;
@@ -753,9 +759,8 @@ $navbar-light-toggler-border-color: rgba($black, .1) !default;
 
 $navbar-light-brand-color:                $navbar-light-active-color !default;
 $navbar-light-brand-hover-color:          $navbar-light-active-color !default;
-$navbar-dark-brand-color:                 $navbar-dark-active-color !default;
-$navbar-dark-brand-hover-color:           $navbar-dark-active-color !default;
-
+$navbar-dark-brand-color:                 $ag-text-dark;
+$navbar-dark-brand-hover-color:           $ag-accent;
 
 // Dropdowns
 //
@@ -841,7 +846,7 @@ $card-cap-bg:                       rgba($black, .03) !default;
 $card-cap-color:                    null !default;
 $card-height:                       null !default;
 $card-color:                        null !default;
-$card-bg:                           $white !default;
+$card-bg:                           $ag-background-dark;
 
 $card-img-overlay-padding:          1.25rem !default;
 

@@ -1,6 +1,7 @@
 import 'package:angular_router/angular_router.dart';
 
 import '../components/pages/about_page.template.dart' as about;
+import '../components/pages/index_page.template.dart' as index;
 import '../components/pages/projects_page.template.dart' as projects;
 import '../components/pages/show_page.template.dart' as showPage;
 import 'route_paths.dart';
@@ -9,7 +10,11 @@ class Routes {
   static final all = <RouteDefinition>[
     RouteDefinition.redirect(
       path: '',
-      redirectTo: RoutePaths.about.toUrl(),
+      redirectTo: RoutePaths.index.toUrl(),
+    ),
+    RouteDefinition(
+      routePath: RoutePaths.index,
+      component: index.IndexPageNgFactory,
     ),
     RouteDefinition(
       routePath: RoutePaths.animeList,

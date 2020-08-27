@@ -5,9 +5,15 @@ import '../markdown_component.dart';
 
 @Component(
   selector: 'index-page',
-  template: '''
-    <h1>Ali "Aligator" Ghanbari</h1>
-    <img [style.background-color]="Colors.background" src="/static/upload/images/face.png" width="300" height="300"/>
+  template: '''<div class="container">
+    <div class="row">
+        <img [style.background-color]="Colors.background" src="/static/upload/images/face.png" width="256" height="256"/>
+        <div class="ml-4">
+            <h1 class="mb-1">Ali "Aligator" Ghanbari</h1>
+            <h6>Pure Programmer</h6>
+        </div>
+    </div>
+</div>
   ''',
   directives: [MarkdownComponent],
   exports: [Colors],
