@@ -7,7 +7,7 @@ import '../show_card_component.dart';
 @Component(
   selector: 'show-page',
   template: '''
-  <div class="row">
+  <div class="row" *ngFor="let shows of showsList">
     <div *ngFor="let show of shows">
       <show-card [show]="show"></show-card>
     </div>
@@ -21,13 +21,18 @@ class ShowPage with OnInit {
 
   final ShowService _showService;
 
-  List<Show> shows = [];
+  List<List<Show>> showsList = [];
 
   ShowPage(this._showService);
 
   @override
   void ngOnInit() async {
-    shows = await _showService.getShowList(showType);
+    final shows = await _showService.getShowList(showType);
+    var rows = (shows.length / 4).ceil();
+    for(var i=0;i<rows;i++){
+      final sublist = shows.sublist((i*4),(i*4)+4);
+      showsList.add(sublist);
+    }
   }
 }
 

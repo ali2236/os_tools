@@ -32,7 +32,12 @@ $ag-text-dark:#556175;
 }
 
 h1 {
-    font-family: 'nerisblack';
+    font-family: 'nerisblack', sans-serif;
+}
+
+h2 {
+    font-family: 'nerisblack', sans-serif;
+    color: $ag-accent;
 }
 
 p {
@@ -41,8 +46,13 @@ p {
 
 h6 {
     font-family: 'Quicksand', sans-serif;
-    font-weight: light;
+    font-weight: 300;
     color: $ag-text-dark;
+}
+
+.card-text-big p{
+    font-size: larger;
+    line-height: 2.5rem;
 }
 
 .color-white {
