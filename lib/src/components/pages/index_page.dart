@@ -7,7 +7,7 @@ import '../markdown_component.dart';
   selector: 'index-page',
   template: '''<div class="container">
     <div class="row">
-        <img [style.background-color]="Colors.background" src="/static/upload/images/face.png" width="256" height="256"/>
+        <img [style.background-color]="Colors.background" width="256" height="256"/>
         <div class="ml-4">
             <h1 class="mb-1">Ali "Aligator" Ghanbari</h1>
             <h6>Pure Programmer</h6>
@@ -19,4 +19,5 @@ import '../markdown_component.dart';
   exports: [Colors],
 )
 class IndexPage {
+  String a;
 }

@@ -6,7 +6,7 @@ import '../models/show.dart';
   selector: 'show-card',
   template: '''
     <div class="col">
-    <div class="mr-auto">
+    <div class="mx-2 mb-4">
      <div class="card">
          <img class="card-img anime-poster anime-card-height" src="{{show.imageUrl}}" alt="{{show.id}}_img">
          <div class="card-img-overlay">
