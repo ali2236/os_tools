@@ -10,7 +10,7 @@ import '../show_card_component.dart';
   <p>Watched a total of <span [innerText]="hours"></span> hours and <span [innerText]="minutes"></span> minutes of {{showType}}.</p>
   <div class="row" *ngFor="let shows of showsList">
       <show-card class="col-sm-12 col-lg-6" *ngFor="let show of shows" [show]="show"></show-card>
-   </div>
+  </div>
   ''',
   directives: [coreDirectives, ShowCard],
 )
@@ -55,7 +55,7 @@ class ShowPage with OnInit {
 @Component(
     template: '''
   <div class="container">
-  <h1>My Anime List</h1>
+  <h2>My Anime List</h2>
   <show-page show-type="anime"></show-page>
   </div>
   ''',
@@ -66,7 +66,7 @@ class AnimePage {}
 @Component(
     template: '''
   <div class="container">
-  <h1>My Movie List</h1>
+  <h2>My Movie List</h2>
   <show-page show-type="movies"></show-page>
   </div>
   ''',
