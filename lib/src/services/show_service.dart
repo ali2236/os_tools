@@ -16,8 +16,8 @@ class ShowService {
             type: type,
             id: r[0],
             name: r[1],
-            epsoideCount: int.tryParse(r[2]),
-            epsoideLenght: int.tryParse(r[3]),
+            episodeCount: int.tryParse(r[2]),
+            episodeLength: int.tryParse(r[3]),
             score: int.tryParse(r[4]),
           );
           list.add(anime);
