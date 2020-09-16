@@ -4,23 +4,20 @@ import '../models/project.dart';
 
 @Component(
   selector: 'project-card',
-  template: '''<div class="card project-card mb-4">
-    <div class="card-title">
-        <div class="row">
-            <div class="col-3">
-                <img class="uk-border-circle"
-                     src="{{project.icon}}"
-                     alt="{{project.name}}_icon"
-                     width="32" height="32">
-            </div>
-            <h3 class="col-9">{{project.name}}</h3>
-        </div>
-    </div>
+  template: '''
+  <div class="card project-card mb-4">
+    <div class="card-title project-title mt-2">{{project.name}}</div>
     <div class="card-body">
         <p>{{project.description}}</p>
     </div>
 </div>''',
-  styles:['.project-card{height:12rem}'],
+  styles:['.project-card{height:12rem}',
+  '''.project-title{
+         font-family: "nerisblack", sans-serif;
+         font-size: 16pt;
+         text-align: center;
+     }'''
+],
 )
 class ProjectCard{
   @Input()

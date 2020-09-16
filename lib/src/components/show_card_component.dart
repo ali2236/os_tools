@@ -13,13 +13,13 @@ import '../models/show.dart';
             <img class="anime-poster anime-card-height" src="{{show.imageUrl}}" alt="{{show.id}}_img">
           </div>
           <div class="col">
-            <p><span>
-            <bootstrap-icon [name]="starIcon" [size]="16"></bootstrap-icon>
+            <p class="mt-4"><span>
+            <bootstrap-icon [name]="iconName" [size]="16"></bootstrap-icon>
             </span> {{show.score}} / 10</p>
             <p class="color-white anime-card-width">{{show.name}}</p>
             <br/>
             <p>Episodes: {{show.episodeCount}}</p>
-            <p>Episode length: {{show.episodeLength}}</p>
+            <p>Episode length: {{show.episodeLength}} minutes</p>
           </div>
         </div>
      </div>
@@ -31,5 +31,5 @@ class ShowCard {
   @Input()
   Show show;
 
-  String starIcon = 'star-fill';
+  String iconName = 'star-fill';
 }

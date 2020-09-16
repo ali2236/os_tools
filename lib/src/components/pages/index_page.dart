@@ -1,4 +1,5 @@
 import 'package:angular/angular.dart';
+import 'package:static_aligator_ir/src/components/title_card_component.dart';
 import 'package:static_aligator_ir/src/models/colors.dart';
 
 import '../markdown_component.dart';
@@ -23,9 +24,7 @@ import '../markdown_component.dart';
       <h2>- Skills</h2>
       <div class="row">
         <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3" *ngFor="let skill of skills">
-          <div class="card">
-            <div class="card-text">{{skill}}</div>
-          </div>
+          <title-card [title]="skill"></title-card>
         </div>
       </div>
     </section>
@@ -33,9 +32,7 @@ import '../markdown_component.dart';
       <h2>- Interests</h2>
       <div class="row">
         <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3" *ngFor="let interest of interests">
-          <div class="card">
-            <div class="card-text">{{interest}}</div>
-          </div>
+        <title-card [title]="interest"></title-card>
         </div>
       </div>
     </section>
@@ -43,20 +40,18 @@ import '../markdown_component.dart';
       <h2>- Languages</h2>
       <div class="row">
         <div class="col-sm-12 col-md-6 col-lg-4" *ngFor="let language of languages">
-          <div class="card">
-            <div class="card-text">{{language}}</div>
-          </div>
+        <title-card [title]="language"></title-card>
         </div>
       </div>
     </section>
 </div>
   ''',
-  directives: [MarkdownComponent, coreDirectives],
+  directives: [MarkdownComponent, coreDirectives, TitleCard],
   exports: [Colors],
 )
 class IndexPage {
   final String aboutText = '''
-I'm a 19 year old from Iran. I am currently studying Software Engineering at Persian Gulf University.
+I'm a 20 year old from Iran. I am currently studying Software Engineering at Persian Gulf University.
 I love programming and experimenting with new programming ideas.
 My favorite programming language is **Dart** (this site is also made using dart).
 I have been writing mobile apps for 2 years by now ,but I only published one app called PrayerTimes(also written in dart).
@@ -74,7 +69,7 @@ I'm also an expert when it comes to PC hardware , love programming using my desk
     'Programming languages',
     'Dart',
     'Algorithms',
-    'Front-end programming frameworks',
+    'Front-end frameworks',
   ];
 
   final List<String> languages = [

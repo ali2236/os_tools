@@ -8,6 +8,7 @@ import 'package:static_aligator_ir/src/services/project_service.dart';
   <div class="container">
     <h1>Projects</h1>
     <h2>A list of my projects:</h2>
+    <br/>
     <div id="projects">
       <div class="row">
           <project-card class="col-sm-12 col-md-6 col-lg-4" *ngFor="let project of projects" [project]="project"></project-card>

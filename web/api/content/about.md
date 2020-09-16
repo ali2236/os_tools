@@ -9,7 +9,7 @@ template: index.mustache
 
 ## About
 
-I'm a 19 year old from Iran. I am currently studying Software Engineering at Persian Gulf University.
+I'm a 20 year old from Iran. I am currently studying Software Engineering at Persian Gulf University.
 I love programming and experimenting with new programming ideas.
 My favorite programming language is **Dart** (this site is also made using dart).
 I have been writing mobile apps for 2 years by now ,but I only published one app called PrayerTimes(also written in dart).
