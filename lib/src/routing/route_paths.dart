@@ -6,4 +6,5 @@ class RoutePaths {
   static final moviesList = RoutePath(path: 'movies-list');
   static final projects = RoutePath(path: 'projects');
   static final about = RoutePath(path: 'about');
+  static final powerPoints = RoutePath(path: 'powerpoints');
 }

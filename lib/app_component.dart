@@ -1,5 +1,6 @@
 import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
+import 'package:static_aligator_ir/src/components/footer.component.dart';
 import 'package:static_aligator_ir/src/components/navbar_component.dart';
 import 'package:static_aligator_ir/src/routing/route_paths.dart';
 import 'package:static_aligator_ir/src/routing/routes.dart';
@@ -12,11 +13,13 @@ import 'package:static_aligator_ir/src/services/show_service.dart';
   template: '''
     <nav-bar></nav-bar>
     <router-outlet [routes]="Routes.all"></router-outlet>
+   <!-- <ag-footer></ag-footer>-->
   ''',
   directives: [
     coreDirectives,
     routerDirectives,
     Navbar,
+    Footer,
   ],
   providers: [
     ClassProvider(ShowService),
