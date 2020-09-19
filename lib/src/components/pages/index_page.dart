@@ -8,7 +8,7 @@ import '../markdown_component.dart';
   selector: 'index-page',
   template: '''<div class="container">
     <div class="row">
-        <img [style.background-color]="Colors.background" width="256" height="256"/>
+        <img class="mx-4" [style.background-color]="Colors.background" width="256" height="256" src="/static/upload/images/face.png"/>
         <div class="ml-4">
             <h1 class="mb-1">Ali "Aligator" Ghanbari</h1>
             <h6>Pure Programmer</h6>
@@ -17,7 +17,7 @@ import '../markdown_component.dart';
     <section id="about" class="my-5">
       <h2>- About</h2>
       <div class="card">
-        <div class="card-text card-text-big p-4"><markdown [value]="aboutText"></markdown></div>
+        <div class="card-text card-text-big p-4 text-justify"><markdown [value]="aboutText"></markdown></div>
       </div>
     </section>
     <section id="skills" class="my-5">
@@ -54,8 +54,8 @@ class IndexPage {
 I'm a 20 year old from Iran. I am currently studying Software Engineering at Persian Gulf University.
 I love programming and experimenting with new programming ideas.
 My favorite programming language is **Dart** (this site is also made using dart).
-I have been writing mobile apps for 2 years by now ,but I only published one app called PrayerTimes(also written in dart).
-I'm also an expert when it comes to PC hardware , love programming using my desktop computer ,and use the light theme in Intellij IDEs.
+I have been writing mobile apps for 3 years by now ,but I only published one app called PrayerTimes(also written in dart).
+I'm also an expert when it comes to PC hardware, love programming using my desktop computer and use the light theme in Intellij IDEs.
   ''';
 
   final List<String> skills = [
