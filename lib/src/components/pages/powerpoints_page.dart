@@ -1,22 +1,28 @@
 import 'dart:convert';
 
 import 'package:angular/angular.dart';
+import 'package:angular_components/utils/browser/window/new_window_opener.dart';
 import 'package:fanoos_http/fanoos_http.dart';
 
 @Component(
   selector: 'powerpoints-page',
-  template: '''
-    <div class="container">
+  template: '''<div class="container">
     <h1>PowerPoints</h1>
     <br/>
-    <div id="powerpoints">
-      <ul>
-          <powerpoint-row *ngFor="let powerpoint of powerpoints" [powerpoint]="powerpoint"></powerpoint-row>
-      </ul>
-    </div>
-   </div>
+    <table id="powerpoints" class="table table-striped">
+        <tbody>
+        <tr class="powerpoint-table-row" *ngFor="let pp of powerpoints">
+            <td (click)="pp.openDownloadLink()">
+              <p><b>{{pp.name}}</b></p>
+              <p class="ag-text-dark">Presented {{pp.presented}}</p>
+            </td>
+            <td class="text-right ag-text-dark">{{pp.date}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
   ''',
-  directives: [coreDirectives, PowerPointRow]
+  directives: [coreDirectives],
 )
 class PowerPointsPage implements OnInit {
   List<PowerPoint> powerpoints;
@@ -32,31 +38,32 @@ class PowerPointsPage implements OnInit {
       onResponse: (_) => [],
       onTimeout: () => [],
     );
+    powerpoints.sort();
   }
 }
 
-@Component(
-  selector: 'powerpoint-row',
-  template: '''
-  <li><a href="{{downloadLink}}">{{powerpoint.name}}</a></li>
-  ''',
-)
-class PowerPointRow{
-
-  @Input()
-  PowerPoint powerpoint;
-
-  String get downloadLink => '/static/upload/powerpoints/${powerpoint.download}';
-}
-
-class PowerPoint {
+class PowerPoint implements Comparable<PowerPoint>{
   final String name;
   final String date;
+  final String presented;
   final String download;
 
-  PowerPoint(this.name, this.date, this.download);
+  PowerPoint(this.name, this.date, this.presented, this.download);
 
   factory PowerPoint.fromJson(Map<String, dynamic> json) {
-    return PowerPoint(json['name'], json['date'], json['download']);
+    return PowerPoint(json['name'], json['date'], json['presented'], json['download']);
+  }
+
+  void openDownloadLink(){
+    openInNewWindow(downloadLink);
+  }
+
+  String get downloadLink => '/static/upload/powerpoints/$download';
+
+  int get _date => int.tryParse(date.replaceAll('/', ''));
+
+  @override
+  int compareTo(PowerPoint other) {
+    return other._date.compareTo(_date);
   }
 }

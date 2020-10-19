@@ -15,7 +15,7 @@ import 'pages/show_page.dart';
            <li class="nav-item"><a class="nav-link" [routerLink]="RoutePaths.projects.toUrl()" [routerLinkActive]="'active'">Projects</a></li>
            <li class="nav-item"><a class="nav-link" [routerLink]="RoutePaths.animeList.toUrl()" [routerLinkActive]="'active'">Anime</a></li>
            <li class="nav-item"><a class="nav-link" [routerLink]="RoutePaths.moviesList.toUrl()" [routerLinkActive]="'active'">Movies</a></li>
-           <li class="nav-item"><a class="nav-link" [routerLink]="RoutePaths.about.toUrl()" [routerLinkActive]="'active'">About</a></li>
+           <li class="nav-item"><a class="nav-link" [routerLink]="RoutePaths.powerPoints.toUrl()" [routerLinkActive]="'active'">PowerPoints</a></li>
        </ul>
        </div>
        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#collapseNavbar" aria-controls="collapseNavbar" aria-expanded="false" aria-label="Toggle navigation">

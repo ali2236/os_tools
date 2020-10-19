@@ -96,3 +96,8 @@ h6 {
 .star-icon-color {
     fill: #ffdb2b;
 }
+
+.powerpoint-table-row:hover {
+    color: $ag-accent;
+    cursor: pointer;
+}
