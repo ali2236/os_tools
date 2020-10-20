@@ -15,7 +15,15 @@ import 'pages/show_page.dart';
            <li class="nav-item"><a class="nav-link" [routerLink]="RoutePaths.projects.toUrl()" [routerLinkActive]="'active'">Projects</a></li>
            <li class="nav-item"><a class="nav-link" [routerLink]="RoutePaths.animeList.toUrl()" [routerLinkActive]="'active'">Anime</a></li>
            <li class="nav-item"><a class="nav-link" [routerLink]="RoutePaths.moviesList.toUrl()" [routerLinkActive]="'active'">Movies</a></li>
-           <li class="nav-item"><a class="nav-link" [routerLink]="RoutePaths.powerPoints.toUrl()" [routerLinkActive]="'active'">PowerPoints</a></li>
+           <li class="nav-item dropdown dropdown-menu-right">
+              <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
+              <div class="dropdown-menu" aria-labelledby="moreDropdown">
+                  <a class="dropdown-item nav-link" [routerLink]="RoutePaths.powerPoints.toUrl()" [routerLinkActive]="'active'">PowerPoints</a>
+                  <a class="dropdown-item nav-link" [routerLink]="RoutePaths.about.toUrl()" [routerLinkActive]="'active'">About</a>
+              <!--  <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>-->
+              </div>
+            </li>
        </ul>
        </div>
        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#collapseNavbar" aria-controls="collapseNavbar" aria-expanded="false" aria-label="Toggle navigation">

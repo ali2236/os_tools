@@ -771,7 +771,7 @@ $dropdown-padding-y:                .5rem !default;
 $dropdown-spacer:                   .125rem !default;
 $dropdown-font-size:                $font-size-base !default;
 $dropdown-color:                    $body-color !default;
-$dropdown-bg:                       $white !default;
+$dropdown-bg:                       lighten($ag-background, 3%) !default;
 $dropdown-border-color:             rgba($black, .15) !default;
 $dropdown-border-radius:            $border-radius !default;
 $dropdown-border-width:             $border-width !default;
@@ -780,12 +780,12 @@ $dropdown-divider-bg:               $gray-200 !default;
 $dropdown-divider-margin-y:         $nav-divider-margin-y !default;
 $dropdown-box-shadow:               0 .5rem 1rem rgba($black, .175) !default;
 
-$dropdown-link-color:               $gray-900 !default;
-$dropdown-link-hover-color:         darken($gray-900, 5%) !default;
-$dropdown-link-hover-bg:            $gray-100 !default;
+$dropdown-link-color:               $ag-text-dark !important;
+$dropdown-link-hover-color:         $red !default;
+$dropdown-link-hover-bg:            lighten($ag-background, 1%) !default;
 
-$dropdown-link-active-color:        $component-active-color !default;
-$dropdown-link-active-bg:           $component-active-bg !default;
+$dropdown-link-active-color:        $ag-text-light !important;
+$dropdown-link-active-bg:           lighten($ag-background, 1%) !default;
 
 $dropdown-link-disabled-color:      $gray-600 !default;
 
