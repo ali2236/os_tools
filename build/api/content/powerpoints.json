@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Asynchronous Programming",
+    "date": "1399/3/10",
+    "presented" : "at University Presentation Class",
+    "download": "async-v3.pptx"
+  },
+  {
+    "name": "Pattern Matching",
+    "date": "1399/4/18",
+    "presented" : "as an Instagram Story",
+    "download": "pattern-matchingI.pptx"
+  },
+  {
+    "name": "Linear Algebra Kalman",
+    "date": "1399/5/02",
+    "presented" : "as an Instagram Story",
+    "download": "lak.pptx"
+  },
+  {
+    "name": "How to Solve 1399F",
+    "date": "1399/6/14",
+    "presented" : "at PGU ICPC team meeting",
+    "download": "1399F.pptx"
+  },
+  {
+    "name": "My First Game",
+    "date": "1399/6/18",
+    "presented" : "as an Instagram Story",
+    "download": "tile-tap.pptx"
+  }
+]
