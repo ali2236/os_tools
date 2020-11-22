@@ -2,6 +2,7 @@ import 'package:angular_router/angular_router.dart';
 
 import '../components/pages/about_page.template.dart' as about;
 import '../components/pages/index_page.template.dart' as index;
+import '../components/pages/playgrounds_page.template.dart' as playgrounds;
 import '../components/pages/powerpoints_page.template.dart' as powerpointPage;
 import '../components/pages/projects_page.template.dart' as projects;
 import '../components/pages/show_page.template.dart' as showPage;
@@ -32,6 +33,10 @@ class Routes {
     RouteDefinition(
       routePath: RoutePaths.powerPoints,
       component: powerpointPage.PowerPointsPageNgFactory,
+    ),
+    RouteDefinition(
+      routePath: RoutePaths.playgrounds,
+      component: playgrounds.PlaygroundsPageNgFactory,
     ),
     RouteDefinition(
       routePath: RoutePaths.about,

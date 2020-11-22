@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:angular/angular.dart';
-import 'package:static_aligator_ir/src/pipes/markdown_pipe.dart';
 import 'package:static_aligator_ir/src/services/content_service.dart';
 
 import '../markdown_component.dart';
@@ -14,7 +13,7 @@ import '../markdown_component.dart';
   </div>
   ''',
   directives: [MarkdownComponent],
-  pipes: [commonPipes,MarkdownPipe],
+  pipes: [commonPipes],
 )
 class AboutPage implements OnInit{
 
