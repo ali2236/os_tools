@@ -1,4 +1,5 @@
 import 'package:angular_router/angular_router.dart';
+import 'package:static_aligator_ir/src/components/playgrounds/playground_routes.dart';
 
 import '../components/pages/about_page.template.dart' as about;
 import '../components/pages/index_page.template.dart' as index;
@@ -38,6 +39,7 @@ class Routes {
       routePath: RoutePaths.playgrounds,
       component: playgrounds.PlaygroundsPageNgFactory,
     ),
+    ...PlaygroundRoutes.routes,
     RouteDefinition(
       routePath: RoutePaths.about,
       component: about.AboutPageNgFactory,
