@@ -11,7 +11,7 @@ import 'todo.dart';
       <h1>TODO App</h1>
       <div class="my-4">
       <input [(ngModel)]="inputName" placeholder="name" (keyup.enter)="addTodo()">
-      <button (click)="addTodo()">Add</button>
+      <button class="btn btn-primary" (click)="addTodo()">Add</button>
       </div>
       <div *ngFor="let todo of todos">
         <todo-card [todo]="todo"></todo-card>

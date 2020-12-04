@@ -19,6 +19,7 @@ import 'pages/show_page.dart';
               <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
               <div class="dropdown-menu" aria-labelledby="moreDropdown">
                   <a class="dropdown-item nav-link" [routerLink]="RoutePaths.powerPoints.toUrl()" [routerLinkActive]="'active'">PowerPoints</a>
+                  <a class="dropdown-item nav-link" [routerLink]="RoutePaths.playgrounds.toUrl()" [routerLinkActive]="'active'">Playgrounds</a>
                   <a class="dropdown-item nav-link" [routerLink]="RoutePaths.about.toUrl()" [routerLinkActive]="'active'">About</a>
               <!--  <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">Something else here</a>-->

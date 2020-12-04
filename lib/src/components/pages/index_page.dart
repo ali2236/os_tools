@@ -55,7 +55,7 @@ I'm a 20 year old from Iran. I am currently studying Software Engineering at Per
 I love programming and experimenting with new programming ideas.
 My favorite programming language is **Dart** (this site is also made using dart).
 I have been writing mobile apps for 3 years by now ,but I only published one app called Prayer Times(also written in dart).
-I'm also an expert when it comes to PC hardware, love programming using my desktop computer and use the ~~light theme~~(not any more) in Intellij IDEs.
+I'm also an expert when it comes to PC hardware. I love programming using my desktop computer and use the <span class="strike-through">light theme</span>(not any more) in Intellij IDEs.
   ''';
 
   final List<String> skills = [

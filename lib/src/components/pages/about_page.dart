@@ -9,6 +9,7 @@ import '../markdown_component.dart';
   selector: 'about-page',
   template: '''
   <div class="container">
+    <p>*This page is not being updated and is going to get removed, eventually.</p>
     <markdown value="{{content | async}}"></markdown>
   </div>
   ''',
