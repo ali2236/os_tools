@@ -1,0 +1,19 @@
+{
+  "name": "Aligator",
+  "short_name": "aligator",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "Ali Ghanbari's personal site.",
+  "icons": [{
+    "src": "static/upload/icons/aligator.png",
+    "sizes": "128x128",
+    "type": "image/png"
+  }],
+  "related_applications": [
+    {
+    "platform": "cafebazaar",
+    "url": "https://cafebazaar.ir/app/ir.aligator.prayer.time"
+  }
+  ]
+}
