@@ -23,15 +23,21 @@ class Process {
 
   int _start;
 
+  bool get started => _start != null;
+
   void start(int time) {
     _start = time;
+  }
+
+  void advance(int i){
+    _remainingTime -= i;
   }
 
   TimeWindow stop(int time) {
     var frame = TimeWindow(_start, time, label);
     _frames.add(frame);
-    _remainingTime -= time - _start;
     _start = null;
+    return frame;
   }
 
   TimeWindow runNonPreemptive(int startTime) {
