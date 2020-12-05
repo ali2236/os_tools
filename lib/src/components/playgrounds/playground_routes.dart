@@ -3,6 +3,7 @@ import 'package:static_aligator_ir/src/components/playgrounds/playground_route_p
 
 import '../playgrounds/OS/OS_page.template.dart' as os;
 import '../playgrounds/TODO/todo_page.template.dart' as todo;
+import '../playgrounds/wakatime/wakatime_page.template.dart' as wakatime;
 
 class PlaygroundRoutes {
   static final routes = [
@@ -13,6 +14,10 @@ class PlaygroundRoutes {
     RouteDefinition(
       routePath: PlaygroundRoutePaths.os,
       component: os.OSPageNgFactory,
+    ),
+    RouteDefinition(
+      routePath: PlaygroundRoutePaths.wakatime,
+      component: wakatime.WakatimePageNgFactory,
     ),
 /*    RouteDefinition(
       routePath: PlaygroundRoutePaths.paint,

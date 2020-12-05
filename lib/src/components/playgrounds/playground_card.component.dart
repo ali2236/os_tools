@@ -7,8 +7,9 @@ import 'package:static_aligator_ir/src/routing/route_paths.dart';
   selector: 'playground-card',
   template: '''
     <div class="card card-body mb-4">
-      <div class="card-title">{{info.name}}</div>
+      <div class="card-title"><h5>{{info.name}}</h5></div>
       <div class="card-text">{{info.description}}</div>
+      <br/>
       <a class="btn btn-primary stretched-link" [routerLink]="info.path.toUrl()">Open {{info.name}}</a>
     </div>
   ''',

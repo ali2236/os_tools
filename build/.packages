@@ -38,7 +38,9 @@ csv:packages/csv/
 dart_internal:packages/dart_internal/
 dart_style:packages/dart_style/
 fanoos_http:packages/fanoos_http/
+firebase:packages/firebase/
 fixnum:packages/fixnum/
+fs_shim:packages/fs_shim/
 glob:packages/glob/
 graphs:packages/graphs/
 hijri:packages/hijri/
@@ -47,6 +49,7 @@ html:packages/html/
 http:packages/http/
 http_multi_server:packages/http_multi_server/
 http_parser:packages/http_parser/
+idb_shim:packages/idb_shim/
 intl:packages/intl/
 io:packages/io/
 js:packages/js/
@@ -76,6 +79,7 @@ quiver:packages/quiver/
 sass:packages/sass/
 sass_builder:packages/sass_builder/
 scratch_space:packages/scratch_space/
+sembast:packages/sembast/
 shelf:packages/shelf/
 shelf_packages_handler:packages/shelf_packages_handler/
 shelf_static:packages/shelf_static/
@@ -89,6 +93,7 @@ static_aligator_ir:packages/static_aligator_ir/
 stream_channel:packages/stream_channel/
 stream_transform:packages/stream_transform/
 string_scanner:packages/string_scanner/
+synchronized:packages/synchronized/
 term_glyph:packages/term_glyph/
 test:packages/test/
 test_api:packages/test_api/

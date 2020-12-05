@@ -1,5 +1,6 @@
 import 'package:angular/angular.dart';
 import 'package:angular_forms/angular_forms.dart';
+import 'package:firebase/firebase.dart';
 import 'package:static_aligator_ir/src/components/playgrounds/OS/models/Process.dart';
 import 'package:static_aligator_ir/src/components/playgrounds/OS/models/Scheduler.dart';
 
@@ -69,23 +70,29 @@ class SchedulerForm {
 
   num get ATT =>
       processes.map((e) => e.turnaroundTime).reduce((a, b) => a + b) /
-          processes.length;
+      processes.length;
 
   num get AWT =>
       processes.map((e) => e.waitingTime).reduce((a, b) => a + b) /
-          processes.length;
+      processes.length;
 
   num get ART =>
       processes.map((e) => e.responseTime).reduce((a, b) => a + b) /
-          processes.length;
+      processes.length;
 
   void calculate() {
     var rawInput = inputText ?? placeholder ?? '';
     processes = parser.parse(rawInput);
     output = scheduler.calculate(processes).toString();
+
+    // analytics
+    analytics().logEvent('Calculate $name', {'input': inputText});
   }
 
   void clear() {
     output = null;
+
+    // analytics
+    analytics().logEvent('Clear $name', {});
   }
 }

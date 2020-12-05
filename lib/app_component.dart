@@ -1,5 +1,6 @@
 import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
+import 'package:firebase/firebase.dart';
 import 'package:static_aligator_ir/src/components/footer.component.dart';
 import 'package:static_aligator_ir/src/components/navbar_component.dart';
 import 'package:static_aligator_ir/src/routing/route_paths.dart';
@@ -28,4 +29,20 @@ import 'package:static_aligator_ir/src/services/show_service.dart';
   ],
   exports: [Routes, RoutePaths],
 )
-class AppComponent {}
+class AppComponent with OnInit{
+  final Router router;
+
+  final Analytics _analytics = analytics();
+
+  AppComponent(this.router);
+
+  @override
+  void ngOnInit() {
+    router.onRouteActivated.listen((event) {
+      if(event!=null){
+        _analytics.setCurrentScreen(event.path);
+      }
+    });
+  }
+
+}

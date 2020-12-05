@@ -7,4 +7,5 @@ class PlaygroundRoutePaths {
   //static final chatroom = RoutePath( path: '${RoutePaths.playgrounds.path}/chatroom');
   //static final dateConverter = RoutePath( path: '${RoutePaths.playgrounds.path}/date-converter');
   static final os = RoutePath( path: '${RoutePaths.playgrounds.path}/os');
+  static final wakatime = RoutePath( path: '${RoutePaths.playgrounds.path}/wakatime');
 }
