@@ -14,7 +14,7 @@ import 'package:fanoos_http/fanoos_http.dart';
         <tr class="powerpoint-table-row" *ngFor="let pp of powerpoints">
             <td (click)="pp.openDownloadLink()">
               <p><b>{{pp.name}}</b></p>
-              <p class="ag-text-dark">Presented {{pp.presented}}</p>
+              <p class="ag-text-dark">{{pp.presented}}</p>
             </td>
             <td class="text-right ag-text-dark">{{pp.date}}</td>
         </tr>

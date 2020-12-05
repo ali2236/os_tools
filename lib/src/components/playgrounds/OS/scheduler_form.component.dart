@@ -3,6 +3,8 @@ import 'package:angular_forms/angular_forms.dart';
 import 'package:static_aligator_ir/src/components/playgrounds/OS/models/Process.dart';
 import 'package:static_aligator_ir/src/components/playgrounds/OS/models/Scheduler.dart';
 
+import 'models/ProcessParser.dart';
+
 @Component(selector: 'scheduler-form', template: '''
   <div>
   <div class="form-group">
@@ -48,7 +50,7 @@ class SchedulerForm {
   String name;
 
   @Input()
-  String format;
+  ProcessParser parser;
 
   @Input()
   String placeholder;
@@ -59,6 +61,8 @@ class SchedulerForm {
   String inputText, output;
 
   List<Process> processes;
+
+  String get format => 'Format: ${parser.template}';
 
   List<Process> get tableProcesses =>
       List.from(processes)..sort((p1, p2) => p1.label.compareTo(p2.label));
@@ -77,8 +81,7 @@ class SchedulerForm {
 
   void calculate() {
     var rawInput = inputText ?? placeholder ?? '';
-    var row = rawInput.split('\n');
-    processes = row.map((s) => Process.fromString(s)).toList();
+    processes = parser.parse(rawInput);
     output = scheduler.calculate(processes).toString();
   }
 

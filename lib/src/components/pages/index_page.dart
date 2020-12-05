@@ -12,6 +12,7 @@ import '../markdown_component.dart';
         <div class="ml-4">
             <h1 class="mb-1">Ali "Aligator" Ghanbari</h1>
             <h6>Pure Programmer</h6>
+            <a class="btn glowing-button" href="mailto:ali.gh2236@gmail.com">Email Me</a>
         </div>
     </div>
     <section id="about" class="my-5">

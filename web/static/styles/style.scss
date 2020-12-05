@@ -105,3 +105,13 @@ h6 {
 .strike-through {
     text-decoration: line-through;
 }
+
+.glowing-button {
+    background-color: $ag-accent;
+    border-radius: 4rem;
+    text-decoration: none;
+    box-shadow: 0px 0px 6px 2px transparentize($ag-accent, 0.75);
+    font-weight: w600;
+    padding: 8px 16px 8px 16px;
+    color: white;
+}
