@@ -13,7 +13,7 @@ import 'models/ProcessParser.dart';
     <button class="btn btn-primary" (click)="calculate()">Calculate</button>
     <button class="btn btn-secondary" (click)="clear()">Clear</button>
   </div>
-  <div id="output" *ngIf="output!=null">
+  <div *ngIf="output!=null">
     <h5>{{name}} Gantt List:</h5>
     <p>{{output}}</p>
     <br />

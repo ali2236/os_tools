@@ -6,7 +6,7 @@ import 'models/book.dart';
   template: '''
   <div class="card p-2">
     <div class="card-title text-center">
-        <h3>{{isEdit ? 'Edit {{name}}' : 'Add a new {{name}}'}}</h3>
+        <h3>{{title}}</h3>
     </div>
     <div class="card-body">
             <div class="form-group">
@@ -31,4 +31,6 @@ class BookForm {
 
   @Input()
   String name;
+
+  String get title => isEdit ? 'Edit $name' : 'Add a new $name';
 }

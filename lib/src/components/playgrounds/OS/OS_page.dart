@@ -1,12 +1,14 @@
 import 'package:angular/angular.dart';
 import 'package:angular_forms/angular_forms.dart';
-import 'package:static_aligator_ir/src/components/playgrounds/OS/cpuSchedulers/sps.dart';
 
+import 'average_memory_time.component.dart';
 import 'cpuSchedulers/fcfs.dart';
 import 'cpuSchedulers/hrrn.dart';
 import 'cpuSchedulers/rr.dart';
 import 'cpuSchedulers/sjf.dart';
+import 'cpuSchedulers/sps.dart';
 import 'cpuSchedulers/srt.dart';
+import 'cpu_utilization.component.dart';
 import 'models/ProcessParser.dart';
 import 'scheduler_form.component.dart';
 
@@ -33,9 +35,21 @@ import 'scheduler_form.component.dart';
         <h3 class="ag-text-accent">Static Priority Scheduling</h3>
         <scheduler-form name="SPS" [parser]="prParser" [placeholder]="example3" [scheduler]="sps"></scheduler-form>
       </div>
+      <br/>
+      <h1>Miscellaneous Calculators</h1>
+      <h3 class="ag-text-accent">Average time to access memory:</h3>
+      <avg-memory-time-form></avg-memory-time-form>
+      <h3 class="ag-text-accent">Multiprogramming Cpu Utilization:</h3>
+      <cpu-utilization></cpu-utilization>
     </div>
   ''',
-  directives: [coreDirectives, formDirectives, SchedulerForm],
+  directives: [
+    coreDirectives,
+    formDirectives,
+    SchedulerForm,
+    AverageMemoryTimeCalculator,
+    CpuUtilization,
+  ],
 )
 class OSPage {
   final atParser = ArrivalTimeParser();
@@ -49,5 +63,6 @@ class OSPage {
   final hrrn = HighestResponseRatioNext();
   var rr = RoundRobin(1);
   final sps = StaticPriorityScheduling();
-  void updateRoundRobin(q)=> rr = RoundRobin(int.tryParse(q));
+
+  void updateRoundRobin(q) => rr = RoundRobin(int.tryParse(q));
 }
