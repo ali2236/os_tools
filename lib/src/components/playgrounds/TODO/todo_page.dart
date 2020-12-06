@@ -1,7 +1,10 @@
 import 'package:angular/angular.dart';
 import 'package:angular_forms/angular_forms.dart';
 import 'package:static_aligator_ir/src/components/playgrounds/TODO/todo_card.component.dart';
+import 'package:static_aligator_ir/src/components/playgrounds/playground_project.dart';
+import 'package:static_aligator_ir/src/components/playgrounds/playgrounds.dart';
 
+import '../playground_page.dart';
 import 'todo.dart';
 
 @Component(
@@ -20,7 +23,7 @@ import 'todo.dart';
   ''',
   directives: [coreDirectives, formDirectives, TodoCard],
 )
-class TodoPage {
+class TodoPage extends PlaygroundPage{
   String inputName;
   List<Todo> todos = [];
   void addTodo(){
@@ -29,4 +32,7 @@ class TodoPage {
       inputName = null;
     }
   }
+
+  @override
+  PlaygroundProject get playground => Playgrounds.todo;
 }

@@ -6,7 +6,7 @@ import 'package:static_aligator_ir/src/routing/route_paths.dart';
 @Component(
   selector: 'playground-card',
   template: '''
-    <div class="card card-body mb-4">
+    <div class="card card-body">
       <div class="card-title"><h5>{{info.name}}</h5></div>
       <div class="card-text">{{info.description}}</div>
       <br/>

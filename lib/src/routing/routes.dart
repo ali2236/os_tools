@@ -3,10 +3,10 @@ import 'package:static_aligator_ir/src/components/playgrounds/playground_routes.
 
 import '../components/pages/about_page.template.dart' as about;
 import '../components/pages/index_page.template.dart' as index;
-import '../components/pages/playgrounds_page.template.dart' as playgrounds;
 import '../components/pages/powerpoints_page.template.dart' as powerpointPage;
 import '../components/pages/projects_page.template.dart' as projects;
 import '../components/pages/show_page.template.dart' as showPage;
+import '../components/playgrounds/playgrounds_page.template.dart' as playgrounds;
 import 'route_paths.dart';
 
 class Routes {

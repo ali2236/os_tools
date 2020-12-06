@@ -7,4 +7,9 @@ class PlaygroundProject {
   final RoutePath path;
 
   PlaygroundProject(this.id, this.name, this.description, this.path);
+
+  @override
+  String toString() {
+    return '$id($name,$description,/${path.path})';
+  }
 }

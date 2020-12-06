@@ -1,13 +1,15 @@
 import 'dart:convert';
 
 import 'package:angular/angular.dart';
-import 'package:angular_components/utils/browser/window/new_window_opener.dart';
 import 'package:fanoos_http/fanoos_http.dart';
+import 'package:static_aligator_ir/src/components/page_header.component.dart';
+import 'package:static_aligator_ir/src/models/page_seo.dart';
+import 'package:static_aligator_ir/src/models/powerpoints.dart';
 
 @Component(
   selector: 'powerpoints-page',
   template: '''<div class="container">
-    <h1>PowerPoints</h1>
+    <page-header [page]="thisPage"></page-header>
     <br/>
     <table id="powerpoints" class="table table-striped">
         <tbody>
@@ -22,13 +24,17 @@ import 'package:fanoos_http/fanoos_http.dart';
     </table>
 </div>
   ''',
-  directives: [coreDirectives],
+  directives: [coreDirectives, PageHeader],
 )
-class PowerPointsPage implements OnInit {
+class PowerPointsPage extends PageSEO {
   List<PowerPoint> powerpoints;
 
   @override
+  String get pageTitle => 'PowerPoints';
+
+  @override
   void ngOnInit() async {
+    super.ngOnInit();
     powerpoints = await httpGet<List<PowerPoint>>(
       url: '/api/content/powerpoints.json',
       bodyParser: jsonDecode,
@@ -42,28 +48,4 @@ class PowerPointsPage implements OnInit {
   }
 }
 
-class PowerPoint implements Comparable<PowerPoint>{
-  final String name;
-  final String date;
-  final String presented;
-  final String download;
 
-  PowerPoint(this.name, this.date, this.presented, this.download);
-
-  factory PowerPoint.fromJson(Map<String, dynamic> json) {
-    return PowerPoint(json['name'], json['date'], json['presented'], json['download']);
-  }
-
-  void openDownloadLink(){
-    openInNewWindow(downloadLink);
-  }
-
-  String get downloadLink => '/static/upload/powerpoints/$download';
-
-  int get _date => int.tryParse(date.replaceAll('/', ''));
-
-  @override
-  int compareTo(PowerPoint other) {
-    return other._date.compareTo(_date);
-  }
-}

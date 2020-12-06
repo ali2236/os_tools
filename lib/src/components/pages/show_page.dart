@@ -1,4 +1,7 @@
 import 'package:angular/angular.dart';
+import 'package:darq/darq.dart';
+import 'package:static_aligator_ir/src/components/page_header.component.dart';
+import 'package:static_aligator_ir/src/models/page_seo.dart';
 
 import '../../models/show.dart';
 import '../../services/show_service.dart';
@@ -20,7 +23,7 @@ class ShowPage with OnInit {
 
   final ShowService _showService;
 
-  List<List<Show>> showsList = [];
+  Iterable<Iterable<Show>> showsList = [];
 
   int hours, minutes;
 
@@ -29,17 +32,13 @@ class ShowPage with OnInit {
   @override
   void ngOnInit() async {
     final shows = await _showService.getShowList(showType);
-    var rows = (shows.length / 4).ceil();
-    for(var i=0;i<rows;i++){
-      final sublist = shows.sublist((i*4),((i*4)+4).clamp(0, shows.length-1));
-      showsList.add(sublist);
-    }
+    showsList = shows.segment(4,includeTail: true);
     calculateWatchTime(shows);
   }
 
-  void calculateWatchTime(List<Show> shows){
+  void calculateWatchTime(List<Show> shows) {
     var watchTime = 0;
-    for(var show in shows){
+    for (var show in shows) {
       watchTime += show.episodeCount * show.episodeLength;
     }
     hours = (watchTime ~/ 60);
@@ -53,23 +52,31 @@ class ShowPage with OnInit {
 <p class="uk-text-small uk-text-muted">last updated {{ date }}</p>*/
 
 @Component(
-    template: '''
+  selector: 'anime-page',
+  template: '''
   <div class="container">
-  <h2>My Anime List</h2>
+  <page-header [page]="thisPage"></page-header>
   <show-page show-type="anime"></show-page>
   </div>
   ''',
-    selector: 'anime-page',
-    directives: [ShowPage])
-class AnimePage {}
+  directives: [ShowPage, PageHeader],
+)
+class AnimePage extends PageSEO {
+  @override
+  String get pageTitle => 'My Anime List';
+}
 
 @Component(
-    template: '''
+  selector: 'movies-page',
+  template: '''
   <div class="container">
-  <h2>My Movie List</h2>
+  <page-header [page]="thisPage"></page-header>
   <show-page show-type="movies"></show-page>
   </div>
   ''',
-    selector: 'movies-page',
-    directives: [ShowPage])
-class MoviePage {}
+  directives: [ShowPage, PageHeader],
+)
+class MoviePage extends PageSEO {
+  @override
+  String get pageTitle => 'My Movie List';
+}

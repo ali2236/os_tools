@@ -1,4 +1,8 @@
 import 'package:angular/angular.dart';
+import 'package:static_aligator_ir/src/components/playgrounds/playground_project.dart';
+
+import '../playground_page.dart';
+import '../playgrounds.dart';
 
 @Component(
   selector: 'wakatime-page',
@@ -17,6 +21,9 @@ import 'package:angular/angular.dart';
    </div>
   ''',
 )
-class WakatimePage {
+class WakatimePage extends PlaygroundPage{
+
+  @override
+  PlaygroundProject get playground => Playgrounds.wakatime;
 
 }

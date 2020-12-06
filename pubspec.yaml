@@ -18,6 +18,8 @@ dependencies:
   hive: ^1.4.4+1
   fs_shim: ^1.0.2+1
   firebase: ^7.3.3
+  #dart_ipify: ^1.0.2
+  darq: ^0.4.0+1
 
   build: any
   build_config: 0.4.2

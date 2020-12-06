@@ -1,6 +1,9 @@
 import 'package:angular/angular.dart';
 import 'package:angular_forms/angular_forms.dart';
+import 'package:static_aligator_ir/src/components/playgrounds/playground_project.dart';
+import 'package:static_aligator_ir/src/components/playgrounds/playgrounds.dart';
 
+import '../playground_page.dart';
 import 'average_memory_time.component.dart';
 import 'cpuSchedulers/fcfs.dart';
 import 'cpuSchedulers/hrrn.dart';
@@ -51,7 +54,7 @@ import 'scheduler_form.component.dart';
     CpuUtilization,
   ],
 )
-class OSPage {
+class OSPage extends PlaygroundPage{
   final atParser = ArrivalTimeParser();
   final prParser = PriorityProcessParser();
   final example1 = 'P1 24\nP2 3\nP3 3';
@@ -65,4 +68,7 @@ class OSPage {
   final sps = StaticPriorityScheduling();
 
   void updateRoundRobin(q) => rr = RoundRobin(int.tryParse(q));
+
+  @override
+  PlaygroundProject get playground => Playgrounds.os;
 }
