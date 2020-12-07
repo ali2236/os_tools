@@ -3,10 +3,13 @@ import 'package:angular_forms/angular_forms.dart';
 import 'package:firebase/firebase.dart';
 import 'package:static_aligator_ir/src/components/playgrounds/OS/models/Process.dart';
 import 'package:static_aligator_ir/src/components/playgrounds/OS/models/Scheduler.dart';
+import 'package:static_aligator_ir/src/components/playgrounds/OS/models/TimeWindow.dart';
 
 import 'models/ProcessParser.dart';
 
-@Component(selector: 'scheduler-form', template: '''
+@Component(
+  selector: 'scheduler-form',
+  template: '''
   <div>
   <div class="form-group">
     <label for="processTextArea">{{format}}</label>
@@ -16,6 +19,7 @@ import 'models/ProcessParser.dart';
   </div>
   <div *ngIf="output!=null">
     <h5>{{name}} Gantt List:</h5>
+    <!--<gantt-chart [times]="times"></gantt-chart>-->
     <p>{{output}}</p>
     <br />
     <table class="table table-striped">
@@ -45,7 +49,9 @@ import 'models/ProcessParser.dart';
   <p>Average Waiting Time: {{AWT}}</p>
   </div>
   </div>
-  ''', directives: [coreDirectives, formDirectives])
+  ''',
+  directives: [coreDirectives, formDirectives, /*GanttChart*/],
+)
 class SchedulerForm {
   @Input()
   String name;
@@ -59,9 +65,12 @@ class SchedulerForm {
   @Input()
   CpuScheduler scheduler;
 
-  String inputText, output;
+  String inputText;
+
+  String get output => times?.toString();
 
   List<Process> processes;
+  List<TimeWindow> times;
 
   String get format => 'Format: ${parser.template}';
 
@@ -83,14 +92,14 @@ class SchedulerForm {
   void calculate() {
     var rawInput = inputText ?? placeholder ?? '';
     processes = parser.parse(rawInput);
-    output = scheduler.calculate(processes).toString();
+    times = scheduler.calculate(processes);
 
     // analytics
     analytics().logEvent('Calculate $name', {'input': inputText});
   }
 
   void clear() {
-    output = null;
+    times = null;
 
     // analytics
     analytics().logEvent('Clear $name', {});
