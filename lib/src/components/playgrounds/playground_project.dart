@@ -5,8 +5,9 @@ class PlaygroundProject {
   final String id;
   final String name;
   final String description;
+  final List<String> tags;
 
-  PlaygroundProject(this.id, this.name, this.description);
+  PlaygroundProject(this.id, this.name, this.description,{this.tags = const []});
 
   @override
   String toString() {

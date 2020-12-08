@@ -4,11 +4,17 @@ import 'package:angular/angular.dart';
   selector: 'title-card',
   template: '''
   <div class="card title-card d-flex align-items-center mb-4">
-    <div class="p-2 m-auto">{{title}}</div>
+    <div #box class="p-2 m-auto"
+    (mouseenter)="box.innerText = hover ?? title" 
+    (mouseleave)="box.innerText = title">{{title}}</div>
   </div>
   ''',
+  directives: [],
 )
 class TitleCard {
   @Input()
   String title;
+
+  @Input()
+  String hover;
 }

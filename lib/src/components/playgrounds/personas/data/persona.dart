@@ -37,7 +37,7 @@ final personas = [
     name: 'ali2236',
     birthYear: '2013',
     nameOrigin: 'It\'s his first name + a random 4 digit number.',
-    about: 'Ali2236 really likes tech and specially smartphones and represents the Geek side of Ali Ghanbari.',
+    about: 'Ali2236 really likes tech(specially smartphones) and represents the Geek side of Ali Ghanbari.',
     likes: 'Computer hardware',
     dislikes: 'Samsung phones',
   ),

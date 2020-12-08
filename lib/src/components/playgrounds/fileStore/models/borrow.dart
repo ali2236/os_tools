@@ -1,4 +1,4 @@
-import 'package:static_aligator_ir/src/components/playgrounds/fileDB/persistance/stores.dart';
+import 'package:static_aligator_ir/src/components/playgrounds/fileStore/persistance/stores.dart';
 
 import 'basic/codec.dart';
 import 'basic/store_object.dart';

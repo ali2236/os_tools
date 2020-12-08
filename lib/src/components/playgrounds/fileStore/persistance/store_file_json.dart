@@ -1,7 +1,5 @@
-
-
-import 'package:static_aligator_ir/src/components/playgrounds/fileDB/models/basic/codec.dart';
-import 'package:static_aligator_ir/src/components/playgrounds/fileDB/models/basic/store_object.dart';
+import 'package:static_aligator_ir/src/components/playgrounds/fileStore/models/basic/codec.dart';
+import 'package:static_aligator_ir/src/components/playgrounds/fileStore/models/basic/store_object.dart';
 
 import 'store_file.dart';
 

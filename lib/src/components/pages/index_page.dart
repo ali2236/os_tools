@@ -2,6 +2,7 @@ import 'package:angular/angular.dart';
 import 'package:static_aligator_ir/src/components/title_card_component.dart';
 import 'package:static_aligator_ir/src/models/colors.dart';
 import 'package:static_aligator_ir/src/models/page_seo.dart';
+import 'package:static_aligator_ir/src/models/pair.dart';
 
 import '../markdown_component.dart';
 
@@ -42,7 +43,7 @@ import '../markdown_component.dart';
       <h2>- Languages</h2>
       <div class="row">
         <div class="col-sm-12 col-md-6 col-lg-4" *ngFor="let language of languages">
-        <title-card [title]="language"></title-card>
+        <title-card [title]="language.first" [hover]="language.second"></title-card>
         </div>
       </div>
     </section>
@@ -74,10 +75,10 @@ I'm also an expert when it comes to PC hardware. I love programming using my des
     'Front-end frameworks',
   ];
 
-  final List<String> languages = [
-    'Persian',
-    'English',
-    'Arabic',
+  final List<Pair<String,String>> languages = [
+    Pair('Persian', 'فارسی'),
+    Pair('English','English'),
+    Pair('Arabic', 'العربیة'),
   ];
 
   @override

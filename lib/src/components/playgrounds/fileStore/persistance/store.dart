@@ -1,5 +1,6 @@
 
-import 'package:static_aligator_ir/src/components/playgrounds/fileDB/models/basic/store_object.dart';
+
+import 'package:static_aligator_ir/src/components/playgrounds/fileStore/models/basic/store_object.dart';
 
 abstract class Store<T extends StoreObject>{
 

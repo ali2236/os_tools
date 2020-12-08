@@ -25,7 +25,7 @@ import 'data/persona.dart' deferred as persona;
           </tr>
         </thead>
         <tbody *ngIf="personas!=null">
-          <tr *ngFor="let persona of personas">
+          <tr *ngFor="let persona of personas"> 
             <td *ngFor="let data of persona">{{data}}</td>
           </tr>
         </tbody>
