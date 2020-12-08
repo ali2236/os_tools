@@ -3,5 +3,8 @@ import 'package:markdown/markdown.dart';
 
 @Pipe('md')
 class MarkdownPipe implements PipeTransform {
-  String transform(value) => markdownToHtml(value);
+  String transform(value) => markdownToHtml(
+        value,
+        extensionSet: ExtensionSet.gitHubFlavored,
+      );
 }
