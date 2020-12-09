@@ -1,7 +1,7 @@
 self.$__dart_deferred_initializers__=self.$__dart_deferred_initializers__||Object.create(null)
 $__dart_deferred_initializers__.current=function(a,b,c,$){var C,H,J,P,W,G,Y,R,K,B,S,E,M={
-rP:function(d,e,f,g,h,i,j){return new M.eu(i,e,f,d,h,g,j)},
-eu:function eu(d,e,f,g,h,i,j){var _=this
+rR:function(d,e,f,g,h,i,j){return new M.ew(i,e,f,d,h,g,j)},
+ew:function ew(d,e,f,g,h,i,j){var _=this
 _.a=d
 _.b=e
 _.c=f
@@ -35,14 +35,14 @@ N=c[21]
 Z=c[22]
 F=c[23]
 X=c[24]
-M.eu.prototype={
+M.ew.prototype={
 b4:function(d){var x=this
 return H.f([x.a,x.b,x.c,x.d,x.r,x.e,x.f],y.c)}}
 var z=a.updateTypes([]);(function inheritance(){var x=a.inherit
-x(M.eu,P.l)})()
-H.A1(b.typeUniverse,JSON.parse('{"CG":"x","Dh":"x","CO":"d6","CH":"j","DM":"j","E5":"j","CJ":"Q","CK":"Q","CX":"ak","Dj":"ak","EL":"cf","CP":"A","DE":"A","Eu":"y","En":"cq","DN":"bV","Em":"b2","D4":"cI","Dp":"dE","Do":"dC","D6":"ae","D8":"du","D7":"ba","CU":"dj","DH":"dI","DG":"aT"}'))
+x(M.ew,P.l)})()
+H.A5(b.typeUniverse,JSON.parse('{"CK":"x","Dl":"x","CS":"d6","CL":"j","DQ":"j","E9":"j","CN":"Q","CO":"Q","D0":"ak","Dn":"ak","EP":"cg","CT":"A","DI":"A","Ey":"z","Er":"cr","DR":"bV","Eq":"b2","D8":"cJ","Dt":"dF","Ds":"dD","Da":"ae","Dc":"dv","Db":"ba","CY":"dk","DL":"dJ","DK":"aT"}'))
 0
 var y={c:H.a9("H<c*>")};(function lazyInitializers(){var x=a.lazy
-x($,"K_","C4",function(){return H.f([M.rP("This is the real Ali Ghanbari that you can meet in the real world. he was always the quiet kid in the group and prefers to spend his time in front of his computer.","2000","-","Lying","Anything that's bizarre, new and unpredictable","Ali Ghanbari",'His mom and dad named him "Ali".'),M.rP("Aligator is the hardcore Gamer/Weeb/Programmer side of Ali Ghanbari.","2016","-","Stock market","Memes","Aligator",'Named after his favorite childhood youtuber, "sl1pg8r".'),M.rP("Ali2236 really likes tech(specially smartphones) and represents the Geek side of Ali Ghanbari.","2013","-","Samsung phones","Computer hardware","ali2236","It's his first name + a random 4 digit number."),M.rP("The Simple minded kid from your childhood.","2009","2013","Speaking","Reading","Ori",'Ori, a miss hearing of the name "Rory". a character from doctor who.')],H.a9("H<eu*>"))})})()}
-$__dart_deferred_initializers__["M0/CGHXXdJlOPF7OqscxFuPFazs="] = $__dart_deferred_initializers__.current
+x($,"K3","C8",function(){return H.f([M.rR("This is the real Ali Ghanbari that you can meet in the real world. he was always the quiet kid in the group and prefers to spend his time in front of his computer.","2000","-","Lying","Anything that's bizarre, new and unpredictable","Ali Ghanbari",'His mom and dad named him "Ali".'),M.rR("Aligator is the hardcore Gamer/Weeb/Programmer side of Ali Ghanbari.","2016","-","Stock market","Memes","Aligator",'Named after his favorite childhood youtuber, "sl1pg8r".'),M.rR("Ali2236 really likes tech(specially smartphones) and represents the Geek side of Ali Ghanbari.","2013","-","Samsung phones","Computer hardware","ali2236","It's his first name + a random 4 digit number."),M.rR("The Simple minded kid from your childhood.","2009","2013","Speaking","Reading","Ori",'Ori, a miss hearing of the name "Rory". a character from doctor who.')],H.a9("H<ew*>"))})})()}
+$__dart_deferred_initializers__["nsunyWerxc8s/rtQDkHXyhm3arY="] = $__dart_deferred_initializers__.current
 //# sourceMappingURL=main.dart.js_1.part.js.map

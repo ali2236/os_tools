@@ -14,8 +14,8 @@ import 'models/ProcessParser.dart';
   <div class="form-group">
     <label for="processTextArea">{{format}}</label>
     <textarea class="form-control" id="processTextArea" rows="5" [placeholder]="placeholder" [(ngModel)]="inputText"></textarea>
-    <button class="btn btn-primary" (click)="calculate()">Calculate</button>
-    <button class="btn btn-secondary" (click)="clear()">Clear</button>
+    <button class="btn btn-primary mt-2" (click)="calculate()">Calculate</button>
+    <button class="btn btn-secondary mt-2" (click)="clear()">Clear</button>
   </div>
   <div *ngIf="output!=null">
     <h5>{{name}} Gantt List:</h5>

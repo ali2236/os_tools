@@ -1,6 +1,7 @@
 import 'package:angular/angular.dart';
 import 'package:static_aligator_ir/src/components/page_header.component.dart';
 
+import '../playground_back_button.component.dart';
 import '../playground_page.dart';
 import '../playground_project.dart';
 import '../playgrounds.dart';
@@ -10,6 +11,7 @@ import 'data/persona.dart' deferred as persona;
   selector: 'persona-page',
   template: '''
   <div class="container">
+    <playground-back-button></playground-back-button>
     <page-header [page]="thisPage"></page-header>
     <div class="my-4">
       <table class="table table-striped">
@@ -34,7 +36,7 @@ import 'data/persona.dart' deferred as persona;
     </div>
   </div>
   ''',
-  directives: [coreDirectives, PageHeader],
+  directives: [coreDirectives, PageHeader, PlaygroundBackButton],
 )
 class PersonaPage extends PlaygroundPage {
   List<List<String>> personas;

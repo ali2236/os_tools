@@ -1,4 +1,6 @@
 import 'package:angular/angular.dart';
+import 'package:static_aligator_ir/src/components/page_header.component.dart';
+import 'package:static_aligator_ir/src/components/playgrounds/playground_back_button.component.dart';
 import 'package:static_aligator_ir/src/components/playgrounds/playground_project.dart';
 
 import '../playground_page.dart';
@@ -8,8 +10,8 @@ import '../playgrounds.dart';
   selector: 'wakatime-page',
   template: '''
    <div class="container">
-      <h1>WakaTime Report</h1>
-      <p>Live data of the past 7 days</p>
+      <playground-back-button></playground-back-button>
+      <page-header [page]="thisPage"></page-header>
       <div class="my-4">
          <h2 class="ag-text-accent">Programming Languages Used:</h2>
         <figure><embed src="https://wakatime.com/share/@b7bc6984-88ab-4908-bfd9-7c92ed6beab3/96033957-2f5c-46e8-afb4-5569c87ef633.svg"></figure>
@@ -20,6 +22,7 @@ import '../playgrounds.dart';
       </div>
    </div>
   ''',
+  directives: [PlaygroundBackButton, PageHeader],
 )
 class WakatimePage extends PlaygroundPage{
 

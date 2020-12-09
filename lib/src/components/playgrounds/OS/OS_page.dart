@@ -1,5 +1,7 @@
 import 'package:angular/angular.dart';
 import 'package:angular_forms/angular_forms.dart';
+import 'package:static_aligator_ir/src/components/page_header.component.dart';
+import 'package:static_aligator_ir/src/components/playgrounds/playground_back_button.component.dart';
 import 'package:static_aligator_ir/src/components/playgrounds/playground_project.dart';
 import 'package:static_aligator_ir/src/components/playgrounds/playgrounds.dart';
 
@@ -19,30 +21,32 @@ import 'scheduler_form.component.dart';
   selector: 'os-page',
   template: '''
   <div class="container">
-      <h1>OS Cpu Schedulers</h1>
+      <playground-back-button></playground-back-button>
+      <page-header [page]="thisPage"></page-header>
+      <h3>Cpu Scheduling Algorithms</h3>
       <div class="my-4">
-        <h3 class="ag-text-accent">First Come First Served</h3>
+        <h4 class="ag-text-accent">First Come First Served</h4>
         <scheduler-form name="FCFS" [parser]="atParser" [placeholder]="example1" [scheduler]="fcfs"></scheduler-form>
-        <h3 class="ag-text-accent">Shortest Job First</h3>
+        <h4 class="ag-text-accent">Shortest Job First</h4>
         <scheduler-form name="SJF" [parser]="atParser" [placeholder]="example1" [scheduler]="sjf"></scheduler-form>
-        <h3 class="ag-text-accent">Shortest Remaining Time/Preemptive SJF</h3>
+        <h4 class="ag-text-accent">Shortest Remaining Time/Preemptive SJF</h4>
         <scheduler-form name="SRT" [parser]="atParser" [placeholder]="example2" [scheduler]="srt"></scheduler-form>
-        <h3 class="ag-text-accent">Highest Response Ratio Next</h3>
+        <h4 class="ag-text-accent">Highest Response Ratio Next</h4>
         <scheduler-form name="HRRN" [parser]="atParser" [placeholder]="example2" [scheduler]="hrrn"></scheduler-form>
-        <h3 class="ag-text-accent">Round Robin</h3>
+        <h4 class="ag-text-accent">Round Robin</h4>
         <div class="form-group">
           <label for="rrq-input">Quantum:</label>
           <input id="rrq-input" #rrq class="form-control" type="number" value="1" (keyup)="updateRoundRobin(rrq.value)">
           <scheduler-form name="RR" [parser]="atParser" [placeholder]="example2" [scheduler]="rr"></scheduler-form>
         </div>
-        <h3 class="ag-text-accent">Static Priority Scheduling</h3>
+        <h4 class="ag-text-accent">Static Priority Scheduling</h4>
         <scheduler-form name="SPS" [parser]="prParser" [placeholder]="example3" [scheduler]="sps"></scheduler-form>
       </div>
       <br/>
-      <h1>Miscellaneous Calculators</h1>
-      <h3 class="ag-text-accent">Average time to access memory:</h3>
+      <h3>Miscellaneous Calculators</h3>
+      <h4 class="ag-text-accent">Average time to access memory:</h4>
       <avg-memory-time-form></avg-memory-time-form>
-      <h3 class="ag-text-accent">Multiprogramming Cpu Utilization:</h3>
+      <h4 class="ag-text-accent">Multiprogramming Cpu Utilization:</h4>
       <cpu-utilization></cpu-utilization>
     </div>
   ''',
@@ -52,6 +56,8 @@ import 'scheduler_form.component.dart';
     SchedulerForm,
     AverageMemoryTimeCalculator,
     CpuUtilization,
+    PageHeader,
+    PlaygroundBackButton,
   ],
 )
 class OSPage extends PlaygroundPage{
