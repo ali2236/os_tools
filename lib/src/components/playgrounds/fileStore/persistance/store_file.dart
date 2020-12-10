@@ -1,4 +1,5 @@
-import 'package:fs_shim/fs_shim.dart';
+import 'package:fs_shim/fs.dart';
+import 'package:fs_shim/fs_browser.dart';
 import 'package:path/path.dart' as path;
 import 'package:static_aligator_ir/src/components/playgrounds/fileStore/models/basic/store_object.dart';
 
@@ -8,7 +9,7 @@ import 'store.dart';
 abstract class FileStore<T extends StoreObject> extends Store<T> {
   final String basePath;
   final String name;
-  final fs = fileSystemWeb;
+  final fs = fileSystemIdb;
 
   FileStore(String basePath, this.name) : basePath = path.join(basePath, name);
 

@@ -4,11 +4,13 @@ import 'basic/store_object.dart';
 const books = 'books';
 
 class Book extends JsonStoreObject {
-  final String title;
-  final String author;
+  String title;
+  String author;
 
-  Book(this.title, this.author) {
-    if (title.isEmpty) throw 'The title field can not be empty';
+  Book(this.title, this.author);
+
+  void validate(){
+    if (title?.isEmpty ?? true) throw 'The title field can not be empty';
   }
 
   @override

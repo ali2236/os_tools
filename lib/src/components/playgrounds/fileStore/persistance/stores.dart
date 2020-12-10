@@ -4,15 +4,21 @@ import 'package:static_aligator_ir/src/components/playgrounds/fileStore/models/b
 import 'store_file.dart';
 import 'store_file_json.dart';
 
-Map<Type, FileStore> _stores = {};
+class Stores {
 
-void addStore<T extends StoreObject>(FileStore<T> store) => _stores[T] = store;
+  final Map<Type, FileStore> _stores = {};
 
-FileStore<T> getStore<T extends StoreObject>() => _stores[T];
+  void addStore<T extends StoreObject>(FileStore<T> store) => _stores[T] = store;
 
-void setupJsonStore<T extends JsonStoreObject>(
-    String basePath, String name, JsonObjectCodec codec) {
-  if (getStore<T>() != null) return;
-  var store = JsonFileStore<T>(name, basePath, codec);
-  addStore<T>(store);
+  FileStore<T> getStore<T extends StoreObject>() => _stores[T];
+
+  void setupJsonStore<T extends JsonStoreObject>(
+      String basePath, String name, JsonObjectCodec codec) {
+    if (getStore<T>() != null) return;
+    var store = JsonFileStore<T>(name, basePath, codec);
+    addStore<T>(store);
+  }
+
+
 }
+

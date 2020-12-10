@@ -8,14 +8,15 @@ import 'member.dart';
 const borrowings = 'borrowings';
 
 class Borrow extends JsonStoreObject {
+  final Stores stores;
   final String memberId;
   final String bookId;
 
-  Borrow(this.memberId, this.bookId);
+  Borrow(this.memberId, this.bookId, this.stores);
 
-  Future<Member> get member => getStore<Member>().getElementById(memberId);
+  Future<Member> get member => stores.getStore<Member>().getElementById(memberId);
 
-  Future<Book> get book => getStore<Book>().getElementById(bookId);
+  Future<Book> get book => stores.getStore<Book>().getElementById(bookId);
 
   @override
   Map<String, dynamic> toJson() => {
@@ -30,8 +31,12 @@ class Borrow extends JsonStoreObject {
 }
 
 class BorrowJsonCodec extends JsonObjectCodec<Borrow> {
+  final Stores stores;
+
+  BorrowJsonCodec(this.stores);
+
   @override
   Borrow deserializeFromMap(Map<String, dynamic> json) {
-    return Borrow(json['memberId'], json['bookId']);
+    return Borrow(json['memberId'], json['bookId'], stores);
   }
 }

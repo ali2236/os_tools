@@ -27,7 +27,7 @@ class PlaygroundRoutes {
     ),
     RouteDefinition(
       routePath: Playgrounds.fileStore.path,
-      component: filestore.FileDBPageNgFactory,
+      component: filestore.FileStorePageNgFactory,
     ),
 /*    RouteDefinition(
       routePath: PlaygroundRoutePaths.paint,
