@@ -1,6 +1,7 @@
 import 'package:angular/angular.dart';
 import 'package:angular_forms/angular_forms.dart';
 import 'package:static_aligator_ir/src/components/page_header.component.dart';
+import 'package:static_aligator_ir/src/components/playgrounds/OS/cpuSchedulers/mfq.dart';
 import 'package:static_aligator_ir/src/components/playgrounds/playground_back_button.component.dart';
 import 'package:static_aligator_ir/src/components/playgrounds/playground_project.dart';
 import 'package:static_aligator_ir/src/components/playgrounds/playgrounds.dart';
@@ -41,6 +42,12 @@ import 'scheduler_form.component.dart';
         </div>
         <h4 class="ag-text-accent">Static Priority Scheduling</h4>
         <scheduler-form name="SPS" [parser]="prParser" [placeholder]="example3" [scheduler]="sps"></scheduler-form>
+        <h4 class="ag-text-accent">MultiLevel Feedback Queue</h4>
+        <div class="form-group">
+          <label for="rr1q-input">Quantums(Format: {{'<Quantum1> <Quantum2>'}}):</label>
+          <input id="rr1q-input" #rr1q class="form-control" placeholder="1 2" (keyup)="updateMFQ(rr1q.value)">
+          <scheduler-form name="MFQ" [parser]="atParser" [placeholder]="example2" [scheduler]="mfq"></scheduler-form>
+        </div>
       </div>
       <br/>
       <h3>Miscellaneous Calculators</h3>
@@ -72,8 +79,16 @@ class OSPage extends PlaygroundPage{
   final hrrn = HighestResponseRatioNext();
   var rr = RoundRobin(1);
   final sps = StaticPriorityScheduling();
+  var mfq = MultiLevelFeedbackQueue(1, 2);
 
   void updateRoundRobin(q) => rr = RoundRobin(int.tryParse(q));
+
+  void updateMFQ(q) {
+    try {
+      final qs = (q as String).split(' ').map(int.tryParse).toList();
+      mfq = MultiLevelFeedbackQueue(qs[0], qs[1]);
+    } catch(e){}
+  }
 
   @override
   PlaygroundProject get playground => Playgrounds.os;

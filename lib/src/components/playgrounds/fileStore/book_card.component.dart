@@ -1,3 +1,4 @@
+/*
 
 import 'package:angular/angular.dart';
 
@@ -18,4 +19,4 @@ import 'models/book.dart';
 class BookCard {
   @Input()
   Book book;
-}
+}*/
