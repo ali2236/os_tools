@@ -8,4 +8,5 @@ class RoutePaths {
   static final about = RoutePath(path: 'about');
   static final powerPoints = RoutePath(path: 'powerpoints');
   static final playgrounds = RoutePath(path: 'playgrounds');
+  static final services = RoutePath(path: 'services');
 }

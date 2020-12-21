@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:angular/angular.dart';
 import 'package:angular_forms/angular_forms.dart';
 
@@ -22,7 +24,7 @@ import 'persistance/stores.dart';
                 <label for="bk-ath">Book Author</label>
                 <input id="bk-ath" type="text" class="form-control" name="author" placeholder="Author" [(ngModel)]="book.author">
             </div>
-            <button class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
        </form>
     </div> 
 </div>
@@ -35,6 +37,9 @@ class BookForm with OnInit {
 
   @Input()
   String action;
+
+  @Input()
+  VoidCallback onSubmit;
 
   final Stores stores;
 
@@ -57,5 +62,6 @@ class BookForm with OnInit {
     } else {
       await bookStore.addElement(book);
     }
+    onSubmit();
   }
 }
