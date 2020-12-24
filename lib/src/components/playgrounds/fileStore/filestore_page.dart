@@ -1,6 +1,8 @@
 import 'package:angular/angular.dart';
 import 'package:static_aligator_ir/src/components/page_header.component.dart';
 import 'package:static_aligator_ir/src/components/playgrounds/fileStore/book_list.component.dart';
+import 'package:static_aligator_ir/src/components/playgrounds/fileStore/borrow_form.component.dart';
+import 'package:static_aligator_ir/src/components/playgrounds/fileStore/member_form.component.dart';
 import 'package:static_aligator_ir/src/components/playgrounds/fileStore/member_list.component.dart';
 import 'package:static_aligator_ir/src/components/playgrounds/playground_page.dart';
 import 'package:static_aligator_ir/src/components/playgrounds/playground_project.dart';
@@ -19,20 +21,23 @@ const _basePath = 'filestore';
   template: '''<div>
     <div class="container">
         <page-header [page]="thisPage"></page-header>
-        <button (click)="refresh()">Refresh</button>
     </div>
     <div class="row">
         <div class="col-4">
-            <member-list [members]="memberList"></member-list>
+            <member-form action="create" [refresh]="refresh"></member-form>
+            <member-list [members]="memberList" [refresh]="refresh"></member-list>
         </div>
         <div class="col-4">
-            <book-form name="book" action="create" [onSubmit]="refresh"></book-form>
-            <book-list [books]="booksList"></book-list>
+            <book-form action="create" [refresh]="refresh"></book-form>
+            <book-list [books]="booksList" [refresh]="refresh"></book-list>
+        </div>
+        <div class="col-4">
+            <borrow-form action="create" [refresh]="refresh" [books]="booksList" [members]="memberList"></borrow-form>
         </div>
     </div>
 </div>
   ''',
-  directives: [coreDirectives, BookForm, PageHeader, BookList, MemberList],
+  directives: [coreDirectives, BookForm, PageHeader, BookList, MemberList, MemberForm, BorrowForm],
   pipes: [commonPipes],
   providers: [ClassProvider(Stores)],
 )
@@ -61,7 +66,10 @@ class FileStorePage extends PlaygroundPage {
   }
 
   void refresh() {
-    stores.getStore<Book>().getAllElements().then((value) => booksList = value);
+    stores
+        .getStore<Book>()
+        .getAllElements()
+        .then((value1) => booksList = value1);
     stores
         .getStore<Member>()
         .getAllElements()

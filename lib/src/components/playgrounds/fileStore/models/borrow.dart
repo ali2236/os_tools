@@ -9,8 +9,8 @@ const borrowings = 'borrowings';
 
 class Borrow extends JsonStoreObject {
   final Stores stores;
-  final String memberId;
-  final String bookId;
+  String memberId;
+  String bookId;
 
   Borrow(this.memberId, this.bookId, this.stores);
 

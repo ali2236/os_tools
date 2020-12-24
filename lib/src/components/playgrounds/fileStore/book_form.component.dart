@@ -39,7 +39,7 @@ class BookForm with OnInit {
   String action;
 
   @Input()
-  VoidCallback onSubmit;
+  VoidCallback refresh;
 
   final Stores stores;
 
@@ -57,11 +57,17 @@ class BookForm with OnInit {
   Store<Book> get bookStore => stores.getStore<Book>();
 
   void submit() async {
-    if (isEdit) {
-      await bookStore.replaceElementAt(book.storeId, book);
-    } else {
-      await bookStore.addElement(book);
+    try {
+      book.validate();
+      if (isEdit) {
+        await bookStore.replaceElementAt(book.storeId, book);
+      } else {
+        await bookStore.addElement(book);
+        book = Book(null, null);
+      }
+      refresh();
+    } catch (e) {
+      print(e);
     }
-    onSubmit();
   }
 }
