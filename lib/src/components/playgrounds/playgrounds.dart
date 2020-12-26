@@ -12,7 +12,7 @@ class Playgrounds {
     os,
     wakatime,
     personas,
-    fileStore,
+    //fileStore,
     //PlaygroundProject('chatroom', 'Chat Room', 'A Simple chat room app', PlaygroundRoutePaths.chatroom),
     //PlaygroundProject('date-converter', 'Date Converter', 'A date converting tool', PlaygroundRoutePaths.dateConverter),
     //PlaygroundProject('paint', 'Paint', 'A Painting App', PlaygroundRoutePaths.paint),

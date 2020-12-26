@@ -7,7 +7,6 @@ import '../components/pages/powerpoints_page.template.dart' as powerpointPage;
 import '../components/pages/projects_page.template.dart' as projects;
 import '../components/pages/show_page.template.dart' as showPage;
 import '../components/playgrounds/playgrounds_page.template.dart' deferred as playgrounds;
-import '../components/services/services_page.template.dart' deferred as services;
 import 'route_paths.dart';
 
 class Routes {
@@ -44,13 +43,13 @@ class Routes {
       },
     ),
     ...PlaygroundRoutes.routes,
-    RouteDefinition.defer(
+/*    RouteDefinition.defer(
       routePath: RoutePaths.services,
       loader: () async {
         await services.loadLibrary();
         return services.ServicesPageNgFactory;
       },
-    ),
+    ),*/
     RouteDefinition(
       routePath: RoutePaths.about,
       component: about.AboutPageNgFactory,
