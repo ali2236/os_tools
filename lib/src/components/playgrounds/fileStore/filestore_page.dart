@@ -9,6 +9,7 @@ import 'package:static_aligator_ir/src/components/playgrounds/playground_project
 
 import '../playgrounds.dart';
 import 'book_form.component.dart';
+import 'borrow_list.component.dart';
 import 'models/book.dart';
 import 'models/borrow.dart';
 import 'models/member.dart';
@@ -25,19 +26,29 @@ const _basePath = 'filestore';
     <div class="row">
         <div class="col-4">
             <member-form action="create" [refresh]="refresh"></member-form>
-            <member-list [members]="memberList" [refresh]="refresh"></member-list>
+            <member-list *ngIf="memberList!=null" [members]="memberList" [refresh]="refresh"></member-list>
         </div>
         <div class="col-4">
             <book-form action="create" [refresh]="refresh"></book-form>
-            <book-list [books]="booksList" [refresh]="refresh"></book-list>
+            <book-list *ngIf="booksList!=null" [books]="booksList" [refresh]="refresh"></book-list>
         </div>
-        <div class="col-4">
+        <div *ngIf="booksList!=null && memberList!=null" class="col-4">
             <borrow-form action="create" [refresh]="refresh" [books]="booksList" [members]="memberList"></borrow-form>
+            <borrow-list *ngIf="borrowList != null" [borrows]="borrowList" [refresh]="refresh"></borrow-list>
         </div>
     </div>
 </div>
   ''',
-  directives: [coreDirectives, BookForm, PageHeader, BookList, MemberList, MemberForm, BorrowForm],
+  directives: [
+    coreDirectives,
+    BookForm,
+    PageHeader,
+    BookList,
+    MemberList,
+    MemberForm,
+    BorrowForm,
+    BorrowList
+  ],
   pipes: [commonPipes],
   providers: [ClassProvider(Stores)],
 )
@@ -46,9 +57,9 @@ class FileStorePage extends PlaygroundPage {
 
   FileStorePage(this.stores);
 
-  List<Book> booksList = [];
-  List<Member> memberList = [];
-  List<Borrow> borrowList = [];
+  List<Book> booksList;
+  List<Member> memberList;
+  List<Borrow> borrowList;
 
   @override
   void ngOnInit() {

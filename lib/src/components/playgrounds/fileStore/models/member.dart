@@ -9,6 +9,8 @@ class Member extends JsonStoreObject {
 
   Member(this.firstName, this.lastName);
 
+  String get fullName => '$firstName $lastName';
+
   void validate(){
     if (firstName.isEmpty) throw 'first name can not be empty';
     if (lastName.isEmpty) throw 'last name can not be empty';

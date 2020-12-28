@@ -20,13 +20,13 @@ import 'persistance/stores.dart';
         <form (ngSubmit)="submit()">
             <div class="form-group">
                 <label for="member-select">Member</label>
-                 <select class="form-control" id="member-select" name="memberId" [(ngModel)]="borrow.memberId">
+                 <select class="form-control" [(ngModel)]="borrow.memberId">
                      <option *ngFor="let member of members" [ngValue]="member.storeId">{{member}}</option>
                  </select>
             </div>
             <div class="form-group">
                 <label for="book-select">Book</label>
-                <select class="form-control" id="book-select" name="bookId" [(ngModel)]="borrow.bookId">
+                <select class="form-control" [(ngModel)]="borrow.bookId">
                      <option *ngFor="let book of books" [ngValue]="book.storeId">{{book}}</option>
                 </select>
             </div>
@@ -37,7 +37,7 @@ import 'persistance/stores.dart';
   ''',
   directives: [coreDirectives, formDirectives],
 )
-class BorrowForm with OnInit {
+class BorrowForm with OnInit{
   @Input()
   Borrow borrow;
 
@@ -48,18 +48,27 @@ class BorrowForm with OnInit {
   VoidCallback refresh;
 
   @Input()
-  List<Book> books = [];
+  List<Book> books;
 
   @Input()
-  List<Member> members = [];
+  List<Member> members;
 
   final Stores stores;
 
   BorrowForm(this.stores);
 
+  Borrow getDefaultBorrowing() {
+    return Borrow(
+      members.isNotEmpty ? members.first.storeId : null,
+      books.isNotEmpty ? books.first.storeId : null,
+      stores,
+    );
+  }
+
+
   @override
   void ngOnInit() {
-    borrow ??= Borrow(null, null, stores);
+    borrow ??= getDefaultBorrowing();
   }
 
   String get formTitle => isEdit ? 'Edit Borrowing' : 'Add a new Borrowing';
@@ -70,11 +79,14 @@ class BorrowForm with OnInit {
 
   void submit() async {
     try {
+      print(borrow);
+      print(isEdit);
+      borrow.validate();
       if (isEdit) {
         await borrowStore.replaceElementAt(borrow.storeId, borrow);
       } else {
         await borrowStore.addElement(borrow);
-        borrow = Borrow(null, null, stores);
+        borrow = getDefaultBorrowing();
       }
       refresh();
     } catch (e) {

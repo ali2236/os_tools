@@ -2,6 +2,7 @@ import 'package:angular_router/angular_router.dart';
 
 import '../playgrounds/OS/OS_page.template.dart' deferred as os;
 import '../playgrounds/TODO/todo_page.template.dart' as todo;
+import '../playgrounds/fileStore/filestore_page.template.dart' deferred as filestore;
 import '../playgrounds/personas/personas_page.template.dart' as personas;
 import '../playgrounds/wakatime/wakatime_page.template.dart' as wakatime;
 import 'playgrounds.dart';
@@ -27,13 +28,13 @@ class PlaygroundRoutes {
       routePath: Playgrounds.personas.path,
       component: personas.PersonaPageNgFactory,
     ),
-/*    RouteDefinition.defer(
+    RouteDefinition.defer(
       routePath: Playgrounds.fileStore.path,
       loader: () async {
         await filestore.loadLibrary();
         return filestore.FileStorePageNgFactory;
       }
-    ),*/
+    ),
 /*    RouteDefinition(
       routePath: PlaygroundRoutePaths.paint,
       component: todo.TodoPageNgFactory,

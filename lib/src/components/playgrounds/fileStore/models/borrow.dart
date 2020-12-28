@@ -14,6 +14,11 @@ class Borrow extends JsonStoreObject {
 
   Borrow(this.memberId, this.bookId, this.stores);
 
+  void validate(){
+    if(memberId==null) throw 'memberId is null';
+    if(bookId==null) throw 'bookId is null';
+  }
+
   Future<Member> get member => stores.getStore<Member>().getElementById(memberId);
 
   Future<Book> get book => stores.getStore<Book>().getElementById(bookId);

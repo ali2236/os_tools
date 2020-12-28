@@ -71,6 +71,7 @@ class MultiLevelFeedbackQueue implements CpuScheduler {
         timeWindows.add(frame);
       } else {
         time++;
+        addReadyProccess();
       }
     }
 

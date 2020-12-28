@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'searchable.dart';
 
 abstract class StoreObject {
@@ -15,5 +17,10 @@ abstract class JsonStoreObject extends StoreObject implements Searchable {
         .map((e) => e.toString().toLowerCase())
         .map((e) => e.contains(q))
         .reduce((value, element) => value || element);
+  }
+
+  @override
+  String toString() {
+    return jsonEncode(toJson());
   }
 }

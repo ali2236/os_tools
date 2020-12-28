@@ -16,7 +16,7 @@ dependencies:
   fanoos_http:
   abstarct_date: ^0.0.6
   hive: ^1.4.4+1
-  fs_shim: ^1.0.2+1
+  fs_shim: ^1.0.2+2
   idb_shim: ^1.11.0
   firebase: ^7.3.3
   #dart_ipify: ^1.0.2

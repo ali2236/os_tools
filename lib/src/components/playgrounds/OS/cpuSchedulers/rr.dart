@@ -45,6 +45,7 @@ class RoundRobin implements CpuScheduler {
         }
       } else {
         time++;
+        addReadyProccess();
       }
     }
     return timeWindows;
