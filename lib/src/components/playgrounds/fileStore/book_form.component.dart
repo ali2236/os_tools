@@ -2,10 +2,9 @@ import 'dart:html';
 
 import 'package:angular/angular.dart';
 import 'package:angular_forms/angular_forms.dart';
+import 'package:static_aligator_ir/src/components/playgrounds/fileStore/services/filestore_service.dart';
 
 import 'models/book.dart';
-import 'persistance/store.dart';
-import 'persistance/stores.dart';
 
 @Component(
   selector: 'book-form',
@@ -39,11 +38,11 @@ class BookForm with OnInit {
   String action;
 
   @Input()
-  VoidCallback refresh;
+  VoidCallback onSubmit;
 
-  final Stores stores;
+  final FileStoreService fss;
 
-  BookForm(this.stores);
+  BookForm(this.fss);
 
   @override
   void ngOnInit() {
@@ -54,18 +53,16 @@ class BookForm with OnInit {
 
   bool get isEdit => action == 'edit';
 
-  Store<Book> get bookStore => stores.getStore<Book>();
-
   void submit() async {
     try {
       book.validate();
       if (isEdit) {
-        await bookStore.replaceElementAt(book.storeId, book);
+        await fss.editBook(book);
       } else {
-        await bookStore.addElement(book);
+        await fss.addBook(book);
         book = Book(null, null);
       }
-      refresh();
+      if(onSubmit!=null) onSubmit();
     } catch (e) {
       print(e);
     }

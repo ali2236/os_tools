@@ -1,27 +1,25 @@
-import 'dart:html';
-
 import 'package:angular/angular.dart';
 import 'package:static_aligator_ir/src/components/playgrounds/fileStore/member_form.component.dart';
+import 'package:static_aligator_ir/src/components/playgrounds/fileStore/services/filestore_service.dart';
 
 import 'models/member.dart';
-import 'persistance/store.dart';
-import 'persistance/stores.dart';
 
 @Component(
   selector: 'member-list',
   template: '''
   <div *ngFor="let member of members">
-    <member-card [member]="member" [refresh]="refresh"></member-card>
+    <member-card [member]="member"></member-card>
   </div>
   ''',
   directives: [coreDirectives, MemberCard]
 )
 class MemberList {
-  @Input()
-  List<Member> members;
 
-  @Input()
-  VoidCallback refresh;
+  final FileStoreService fss;
+
+  MemberList(this.fss);
+
+  List<Member> get members => fss.members;
 }
 
 @Component(
@@ -29,7 +27,7 @@ class MemberList {
   template: '''
   <div>
   <div *ngIf="editMode">
-    <member-form [member]="member" action="edit" [refresh]="editDone"></member-form>
+    <member-form [member]="member" action="edit" [onSubmit]="editDone"></member-form>
   </div>
   <div *ngIf="!editMode">
   <div class="card card-body my-2">
@@ -50,23 +48,15 @@ class MemberCard {
   @Input()
   Member member;
 
-  @Input()
-  VoidCallback refresh;
-
   bool editMode = false;
 
-  final Stores stores;
+  final FileStoreService fss;
 
-  Store<Member> get memberStore => stores.getStore<Member>();
-
-  MemberCard(this.stores);
+  MemberCard(this.fss);
 
   void edit() => editMode = true;
 
   void editDone()=> editMode = false;
 
-  void delete() async{
-    await memberStore.removeElementById(member.storeId);
-    refresh();
-  }
+  void delete() => fss.deleteMember(member);
 }

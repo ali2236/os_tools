@@ -2,12 +2,11 @@ import 'dart:html';
 
 import 'package:angular/angular.dart';
 import 'package:angular_forms/angular_forms.dart';
+import 'package:static_aligator_ir/src/components/playgrounds/fileStore/services/filestore_service.dart';
 
 import 'models/book.dart';
 import 'models/borrow.dart';
 import 'models/member.dart';
-import 'persistance/store.dart';
-import 'persistance/stores.dart';
 
 @Component(
   selector: 'borrow-form',
@@ -45,23 +44,21 @@ class BorrowForm with OnInit{
   String action;
 
   @Input()
-  VoidCallback refresh;
+  VoidCallback onSubmit;
 
-  @Input()
-  List<Book> books;
+  final FileStoreService fileStoreService;
 
-  @Input()
-  List<Member> members;
+  List<Book> get books => fileStoreService.books;
 
-  final Stores stores;
+  List<Member> get members => fileStoreService.members;
 
-  BorrowForm(this.stores);
+  BorrowForm(this.fileStoreService);
 
   Borrow getDefaultBorrowing() {
     return Borrow(
       members.isNotEmpty ? members.first.storeId : null,
       books.isNotEmpty ? books.first.storeId : null,
-      stores,
+      fileStoreService.stores,
     );
   }
 
@@ -75,20 +72,16 @@ class BorrowForm with OnInit{
 
   bool get isEdit => action == 'edit';
 
-  Store<Borrow> get borrowStore => stores.getStore<Borrow>();
-
   void submit() async {
     try {
-      print(borrow);
-      print(isEdit);
       borrow.validate();
       if (isEdit) {
-        await borrowStore.replaceElementAt(borrow.storeId, borrow);
+        await fileStoreService.editBorrowing(borrow);
       } else {
-        await borrowStore.addElement(borrow);
+        await fileStoreService.addBorrowing(borrow);
         borrow = getDefaultBorrowing();
       }
-      refresh();
+      Function.apply(onSubmit ?? (){},const []);
     } catch (e) {
       print(e);
     }

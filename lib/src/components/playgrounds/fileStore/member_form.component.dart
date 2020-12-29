@@ -3,9 +3,8 @@ import 'dart:html';
 import 'package:angular/angular.dart';
 import 'package:angular_forms/angular_forms.dart';
 import 'package:static_aligator_ir/src/components/playgrounds/fileStore/models/member.dart';
+import 'package:static_aligator_ir/src/components/playgrounds/fileStore/services/filestore_service.dart';
 
-import 'persistance/store.dart';
-import 'persistance/stores.dart';
 
 @Component(selector: 'member-form', template: '''
   <div class="card p-2">
@@ -35,11 +34,11 @@ class MemberForm with OnInit {
   String action;
 
   @Input()
-  VoidCallback refresh;
+  VoidCallback onSubmit;
 
-  final Stores stores;
+  final FileStoreService fss;
 
-  MemberForm(this.stores);
+  MemberForm(this.fss);
 
   @override
   void ngOnInit() {
@@ -50,18 +49,16 @@ class MemberForm with OnInit {
 
   bool get isEdit => action == 'edit';
 
-  Store<Member> get memberStore => stores.getStore<Member>();
-
   void submit() async {
     try {
       member.validate();
       if (isEdit) {
-        await memberStore.replaceElementAt(member.storeId, member);
+        await fss.editMember(member);
       } else {
-        await memberStore.addElement(member);
+        await fss.addMember(member);
         member = Member(null, null);
       }
-      refresh();
+      if(onSubmit!=null) onSubmit();
     } catch (e) {
       print(e);
     }

@@ -2,33 +2,32 @@ import 'dart:html';
 
 import 'package:angular/angular.dart';
 import 'package:static_aligator_ir/src/components/playgrounds/fileStore/book_form.component.dart';
+import 'package:static_aligator_ir/src/components/playgrounds/fileStore/services/filestore_service.dart';
 
 import 'models/book.dart';
-import 'persistance/store.dart';
-import 'persistance/stores.dart';
 
 @Component(
   selector: 'book-list',
   template: '''
   <div *ngFor="let book of books">
-    <book-card [book]="book" [refresh]="refresh"></book-card>  
+    <book-card [book]="book"></book-card>  
   </div>
   ''',
   directives: [coreDirectives, BookCard],
 )
 class BookList {
-  @Input()
-  List<Book> books;
+  final FileStoreService fss;
 
-  @Input()
-  VoidCallback refresh;
+  BookList(this.fss);
+
+  List<Book> get books => fss.books;
 }
 
 @Component(
   selector: 'book-card',
   template: '''<div>
     <div *ngIf="editMode">
-        <book-form [book]="book" action="edit" [refresh]="editDone"></book-form>
+        <book-form [book]="book" action="edit" [onSubmit]="editDone"></book-form>
     </div>
     <div *ngIf="!editMode">
         <div class="card card-body my-2">
@@ -52,18 +51,13 @@ class BookCard {
 
   bool editMode = false;
 
-  final Stores stores;
+  final FileStoreService fss;
 
-  Store<Book> get bookStore => stores.getStore<Book>();
-
-  BookCard(this.stores);
+  BookCard(this.fss);
 
   void edit() => editMode = true;
 
   void editDone()=> editMode = false;
 
-  void delete() async{
-    await bookStore.removeElementById(book.storeId);
-    refresh();
-  }
+  void delete() => fss.deleteBook(book);
 }

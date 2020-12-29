@@ -4,6 +4,7 @@ import 'package:static_aligator_ir/src/components/playgrounds/fileStore/book_lis
 import 'package:static_aligator_ir/src/components/playgrounds/fileStore/borrow_form.component.dart';
 import 'package:static_aligator_ir/src/components/playgrounds/fileStore/member_form.component.dart';
 import 'package:static_aligator_ir/src/components/playgrounds/fileStore/member_list.component.dart';
+import 'package:static_aligator_ir/src/components/playgrounds/fileStore/services/filestore_service.dart';
 import 'package:static_aligator_ir/src/components/playgrounds/playground_page.dart';
 import 'package:static_aligator_ir/src/components/playgrounds/playground_project.dart';
 
@@ -15,8 +16,6 @@ import 'models/borrow.dart';
 import 'models/member.dart';
 import 'persistance/stores.dart';
 
-const _basePath = 'filestore';
-
 @Component(
   selector: 'filedb-page',
   template: '''<div>
@@ -25,16 +24,16 @@ const _basePath = 'filestore';
     </div>
     <div class="row">
         <div class="col-4">
-            <member-form action="create" [refresh]="refresh"></member-form>
-            <member-list *ngIf="memberList!=null" [members]="memberList" [refresh]="refresh"></member-list>
+            <member-form action="create"></member-form>
+            <member-list *ngIf="fss.stable"></member-list>
         </div>
         <div class="col-4">
-            <book-form action="create" [refresh]="refresh"></book-form>
-            <book-list *ngIf="booksList!=null" [books]="booksList" [refresh]="refresh"></book-list>
+            <book-form action="create"></book-form>
+            <book-list *ngIf="fss.stable"></book-list>
         </div>
-        <div *ngIf="booksList!=null && memberList!=null" class="col-4">
-            <borrow-form action="create" [refresh]="refresh" [books]="booksList" [members]="memberList"></borrow-form>
-            <borrow-list *ngIf="borrowList != null" [borrows]="borrowList" [refresh]="refresh"></borrow-list>
+        <div *ngIf="fss.stable" class="col-4">
+            <borrow-form action="create"></borrow-form>
+            <borrow-list></borrow-list>
         </div>
     </div>
 </div>
@@ -50,46 +49,21 @@ const _basePath = 'filestore';
     BorrowList
   ],
   pipes: [commonPipes],
-  providers: [ClassProvider(Stores)],
+  providers: [
+    ClassProvider(Stores),
+    ClassProvider(FileStoreService),
+  ],
 )
 class FileStorePage extends PlaygroundPage {
-  final Stores stores;
+  final FileStoreService fss;
 
-  FileStorePage(this.stores);
+  FileStorePage(this.fss);
 
-  List<Book> booksList;
-  List<Member> memberList;
-  List<Borrow> borrowList;
+  List<Book> get booksList => fss.books;
 
-  @override
-  void ngOnInit() {
-    super.ngOnInit();
+  List<Member> get memberList => fss.members;
 
-    final memberCodec = MemberJsonCodec();
-    final bookCodec = BookJsonCodec();
-    final borrowCodec = BorrowJsonCodec(stores);
-
-    stores.setupJsonStore<Member>(_basePath, members, memberCodec);
-    stores.setupJsonStore<Book>(_basePath, books, bookCodec);
-    stores.setupJsonStore<Borrow>(_basePath, borrowings, borrowCodec);
-
-    refresh();
-  }
-
-  void refresh() {
-    stores
-        .getStore<Book>()
-        .getAllElements()
-        .then((value1) => booksList = value1);
-    stores
-        .getStore<Member>()
-        .getAllElements()
-        .then((value) => memberList = value);
-    stores
-        .getStore<Borrow>()
-        .getAllElements()
-        .then((value) => borrowList = value);
-  }
+  List<Borrow> get borrowList => fss.borrowings;
 
   @override
   PlaygroundProject get playground => Playgrounds.fileStore;
