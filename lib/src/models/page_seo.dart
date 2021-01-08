@@ -10,14 +10,5 @@ abstract class PageSEO with OnInit {
   PageSEO get thisPage => this;
 
   @override
-  void ngOnInit() {
-    if (pageTitle != null) {
-      document.title = pageTitle;
-    }
-    if (pageDescription != null) {
-      document
-          .querySelector('meta[name="description"]')
-          .setAttribute('content', pageDescription);
-    }
-  }
+  void ngOnInit() {}
 }

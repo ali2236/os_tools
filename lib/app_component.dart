@@ -6,7 +6,7 @@ import 'package:os_aligator_ir/src/routing/route_paths.dart';
 import 'package:os_aligator_ir/src/routing/routes.dart';
 
 @Component(
-  selector: 'aligator',
+  selector: 'os-tools',
   template: '''
     <nav-bar></nav-bar>
     <router-outlet [routes]="Routes.all"></router-outlet>
@@ -20,6 +20,4 @@ import 'package:os_aligator_ir/src/routing/routes.dart';
   ],
   exports: [Routes, RoutePaths],
 )
-class AppComponent {
-
-}
+class AppComponent{}

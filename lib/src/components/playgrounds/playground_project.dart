@@ -14,5 +14,5 @@ class PlaygroundProject {
     return '$id($name,$description,/${path.path})';
   }
 
-  RoutePath get path =>  RoutePath(path: '${RoutePaths.playgrounds.path}/$id');
+  RoutePath get path =>  RoutePath(path: id);
 }
