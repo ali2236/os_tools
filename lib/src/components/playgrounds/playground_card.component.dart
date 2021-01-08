@@ -1,7 +1,7 @@
 import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
-import 'package:static_aligator_ir/src/components/playgrounds/playground_project.dart';
-import 'package:static_aligator_ir/src/routing/route_paths.dart';
+import 'package:os_aligator_ir/src/components/playgrounds/playground_project.dart';
+import 'package:os_aligator_ir/src/routing/route_paths.dart';
 
 @Component(
   selector: 'playground-card',

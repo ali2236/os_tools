@@ -1,25 +1,13 @@
-name: static_aligator_ir
+name: os_aligator_ir
 description: An absolute bare-bones web app.
 version: 1.0.0
-homepage: https://www.aligator.ir
-
-environment:
-  sdk: '>=2.7.0 <3.0.0'
+homepage: https://os.aligator.ir
 
 dependencies:
   angular: 6.0.0
   angular_components: ^1.0.2
   angular_router: ^2.0.0
   angular_forms: ^3.0.0
-
-  http: 0.12.2
-  fanoos_http:
-  abstarct_date: ^0.0.6
-  hive: ^1.4.4+1
-  fs_shim: ^1.0.2+2
-  idb_shim: ^1.11.0
-  firebase: ^7.3.3
-  #dart_ipify: ^1.0.2
   darq: ^0.4.0+1
 
   build: any
@@ -27,18 +15,12 @@ dependencies:
   meta: ^1.2.4
   glob: ^1.2.0
   path: ^1.7.0
-
-  csv: ^4.1.0
-  xml: ^4.5.1
-  yaml: ^2.2.1
-  mustache: ^1.1.1
-  markdown: ^3.0.0
   sass: 1.26.10
 
 
 dev_dependencies:
   test:
-  build_runner: ^1.7.0
+  build_runner: ^1.9.0
   #build_resolvers: ^1.3.11
   build_web_compilers: ^2.10.0
   pedantic: ^1.9.2

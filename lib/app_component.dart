@@ -1,13 +1,9 @@
 import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
-import 'package:firebase/firebase.dart';
-import 'package:static_aligator_ir/src/components/footer.component.dart';
-import 'package:static_aligator_ir/src/components/navbar.component.dart';
-import 'package:static_aligator_ir/src/routing/route_paths.dart';
-import 'package:static_aligator_ir/src/routing/routes.dart';
-import 'package:static_aligator_ir/src/services/content_service.dart';
-import 'package:static_aligator_ir/src/services/project_service.dart';
-import 'package:static_aligator_ir/src/services/show_service.dart';
+import 'package:os_aligator_ir/src/components/footer.component.dart';
+import 'package:os_aligator_ir/src/components/navbar.component.dart';
+import 'package:os_aligator_ir/src/routing/route_paths.dart';
+import 'package:os_aligator_ir/src/routing/routes.dart';
 
 @Component(
   selector: 'aligator',
@@ -22,27 +18,8 @@ import 'package:static_aligator_ir/src/services/show_service.dart';
     Navbar,
     Footer,
   ],
-  providers: [
-    ClassProvider(ShowService),
-    ClassProvider(ContentService),
-    ClassProvider(ProjectService),
-  ],
   exports: [Routes, RoutePaths],
 )
-class AppComponent with OnInit{
-  final Router router;
-
-  final Analytics _analytics = analytics();
-
-  AppComponent(this.router);
-
-  @override
-  void ngOnInit() {
-    router.onRouteActivated.listen((event) {
-      if(event!=null){
-        _analytics.setCurrentScreen(event.path);
-      }
-    });
-  }
+class AppComponent {
 
 }

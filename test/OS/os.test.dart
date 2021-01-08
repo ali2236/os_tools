@@ -1,13 +1,13 @@
 
-import 'package:static_aligator_ir/src/components/playgrounds/OS/cpuSchedulers/fcfs.dart';
-import 'package:static_aligator_ir/src/components/playgrounds/OS/cpuSchedulers/hrrn.dart';
-import 'package:static_aligator_ir/src/components/playgrounds/OS/cpuSchedulers/mfq.dart';
-import 'package:static_aligator_ir/src/components/playgrounds/OS/cpuSchedulers/rr.dart';
-import 'package:static_aligator_ir/src/components/playgrounds/OS/cpuSchedulers/sjf.dart';
-import 'package:static_aligator_ir/src/components/playgrounds/OS/cpuSchedulers/sps.dart';
-import 'package:static_aligator_ir/src/components/playgrounds/OS/cpuSchedulers/srt.dart';
-import 'package:static_aligator_ir/src/components/playgrounds/OS/models/Process.dart';
-import 'package:static_aligator_ir/src/components/playgrounds/OS/models/TimeWindow.dart';
+import 'package:os_aligator_ir/src/components/playgrounds/OS/cpuSchedulers/fcfs.dart';
+import 'package:os_aligator_ir/src/components/playgrounds/OS/cpuSchedulers/hrrn.dart';
+import 'package:os_aligator_ir/src/components/playgrounds/OS/cpuSchedulers/mfq.dart';
+import 'package:os_aligator_ir/src/components/playgrounds/OS/cpuSchedulers/rr.dart';
+import 'package:os_aligator_ir/src/components/playgrounds/OS/cpuSchedulers/sjf.dart';
+import 'package:os_aligator_ir/src/components/playgrounds/OS/cpuSchedulers/sps.dart';
+import 'package:os_aligator_ir/src/components/playgrounds/OS/cpuSchedulers/srt.dart';
+import 'package:os_aligator_ir/src/components/playgrounds/OS/models/Process.dart';
+import 'package:os_aligator_ir/src/components/playgrounds/OS/models/TimeWindow.dart';
 import 'package:test/test.dart';
 
 void main() {

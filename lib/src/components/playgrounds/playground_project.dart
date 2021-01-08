@@ -1,5 +1,5 @@
 import 'package:angular_router/angular_router.dart';
-import 'package:static_aligator_ir/src/routing/route_paths.dart';
+import 'package:os_aligator_ir/src/routing/route_paths.dart';
 
 class PlaygroundProject {
   final String id;

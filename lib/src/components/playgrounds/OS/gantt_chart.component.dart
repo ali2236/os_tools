@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:angular/angular.dart';
 import 'package:angular_components/utils/color/color.dart';
-import 'package:static_aligator_ir/src/components/playgrounds/OS/models/TimeWindow.dart';
+import 'package:os_aligator_ir/src/components/playgrounds/OS/models/TimeWindow.dart';
 
 /*
      aria-valuenow="(time.end - time.start)/end"

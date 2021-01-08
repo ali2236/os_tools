@@ -1,7 +1,7 @@
 
 import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
-import 'package:static_aligator_ir/app_component.template.dart' as ng;
+import 'package:os_aligator_ir/app_component.template.dart' as ng;
 
 import 'main.template.dart' as self;
 

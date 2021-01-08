@@ -1,6 +1,6 @@
 import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
-import 'package:static_aligator_ir/src/components/bootstrap_icon.dart';
+import 'package:os_aligator_ir/src/components/bootstrap_icon.dart';
 
 @Component(
   selector: 'playground-back-button',

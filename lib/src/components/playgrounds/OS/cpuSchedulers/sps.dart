@@ -1,6 +1,6 @@
-import 'package:static_aligator_ir/src/components/playgrounds/OS/models/Process.dart';
-import 'package:static_aligator_ir/src/components/playgrounds/OS/models/Scheduler.dart';
-import 'package:static_aligator_ir/src/components/playgrounds/OS/models/TimeWindow.dart';
+import 'package:os_aligator_ir/src/components/playgrounds/OS/models/Process.dart';
+import 'package:os_aligator_ir/src/components/playgrounds/OS/models/Scheduler.dart';
+import 'package:os_aligator_ir/src/components/playgrounds/OS/models/TimeWindow.dart';
 
 import 'fcfs.dart';
 

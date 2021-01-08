@@ -1,10 +1,10 @@
 import 'package:angular/angular.dart';
 import 'package:angular_forms/angular_forms.dart';
-import 'package:static_aligator_ir/src/components/page_header.component.dart';
-import 'package:static_aligator_ir/src/components/playgrounds/OS/cpuSchedulers/mfq.dart';
-import 'package:static_aligator_ir/src/components/playgrounds/playground_back_button.component.dart';
-import 'package:static_aligator_ir/src/components/playgrounds/playground_project.dart';
-import 'package:static_aligator_ir/src/components/playgrounds/playgrounds.dart';
+import 'package:os_aligator_ir/src/components/page_header.component.dart';
+import 'package:os_aligator_ir/src/components/playgrounds/OS/cpuSchedulers/mfq.dart';
+import 'package:os_aligator_ir/src/components/playgrounds/playground_back_button.component.dart';
+import 'package:os_aligator_ir/src/components/playgrounds/playground_project.dart';
+import 'package:os_aligator_ir/src/components/playgrounds/playgrounds.dart';
 
 import '../playground_page.dart';
 import 'average_memory_time.component.dart';
