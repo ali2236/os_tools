@@ -73,3 +73,11 @@ class Process {
     return '$label($arrivalTime,$serviceTime)';
   }
 }
+
+extension ProcessTimes on List<Process> {
+  num get ATT => map((e) => e.turnaroundTime).reduce((a, b) => a + b) / length;
+
+  num get AWT => map((e) => e.waitingTime).reduce((a, b) => a + b) / length;
+
+  num get ART => map((e) => e.responseTime).reduce((a, b) => a + b) / length;
+}

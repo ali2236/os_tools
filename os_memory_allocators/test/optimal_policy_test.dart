@@ -1,19 +1,16 @@
-import 'package:os_aligator_ir/src/components/playgrounds/frameAllocation/algorithms/optimal.dart';
-import 'package:os_aligator_ir/src/components/playgrounds/frameAllocation/models/allocation_snapshot.dart';
-import 'package:os_aligator_ir/src/components/playgrounds/frameAllocation/models/allocation_timeline.dart';
-import 'package:os_aligator_ir/src/components/playgrounds/frameAllocation/models/frame.dart';
-import 'package:os_aligator_ir/src/components/playgrounds/frameAllocation/models/memory_stack.dart';
+import 'package:os_memory_allocators/os_memory_allocators.dart';
 import 'package:test/test.dart';
 
 void main() {
-  group('Memory Frame Allocation algorithms', () {
-    test('Optimal policy', () {
+  group('Optimal Policy', () {
+    test('test 1', () {
       expect(
         OptimalPolicyAllocator()
             .calculate([2, 3, 2, 1, 5, 2, 4, 5, 3, 2, 5, 2], 3),
         equals(
           AllocationTimeline([
             AllocationSnapshot(
+              null,
               false,
               MemoryStack.fromFrames([
                 Frame(null),
@@ -22,6 +19,7 @@ void main() {
               ]),
             ),
             AllocationSnapshot(
+              2,
               true,
               MemoryStack.fromFrames([
                 Frame(2),
@@ -30,6 +28,7 @@ void main() {
               ]),
             ),
             AllocationSnapshot(
+              3,
               true,
               MemoryStack.fromFrames([
                 Frame(2),
@@ -38,6 +37,7 @@ void main() {
               ]),
             ),
             AllocationSnapshot(
+              2,
               false,
               MemoryStack.fromFrames([
                 Frame(2),
@@ -46,6 +46,7 @@ void main() {
               ]),
             ),
             AllocationSnapshot(
+              1,
               true,
               MemoryStack.fromFrames([
                 Frame(2),
@@ -54,6 +55,7 @@ void main() {
               ]),
             ),
             AllocationSnapshot(
+              5,
               true,
               MemoryStack.fromFrames([
                 Frame(2),
@@ -62,6 +64,7 @@ void main() {
               ]),
             ),
             AllocationSnapshot(
+              2,
               false,
               MemoryStack.fromFrames([
                 Frame(2),
@@ -70,6 +73,7 @@ void main() {
               ]),
             ),
             AllocationSnapshot(
+              4,
               true,
               MemoryStack.fromFrames([
                 Frame(4),
@@ -78,6 +82,7 @@ void main() {
               ]),
             ),
             AllocationSnapshot(
+              5,
               false,
               MemoryStack.fromFrames([
                 Frame(4),
@@ -86,6 +91,7 @@ void main() {
               ]),
             ),
             AllocationSnapshot(
+              3,
               false,
               MemoryStack.fromFrames([
                 Frame(4),
@@ -94,6 +100,7 @@ void main() {
               ]),
             ),
             AllocationSnapshot(
+              2,
               true,
               MemoryStack.fromFrames([
                 Frame(2),
@@ -102,6 +109,7 @@ void main() {
               ]),
             ),
             AllocationSnapshot(
+              5,
               false,
               MemoryStack.fromFrames([
                 Frame(2),
@@ -110,6 +118,7 @@ void main() {
               ]),
             ),
             AllocationSnapshot(
+              2,
               false,
               MemoryStack.fromFrames([
                 Frame(2),

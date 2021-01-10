@@ -1,8 +1,8 @@
 import 'dart:collection';
 
-import 'package:os_aligator_ir/src/components/playgrounds/cpuScheduling/models/Process.dart';
-import 'package:os_aligator_ir/src/components/playgrounds/cpuScheduling/models/Scheduler.dart';
-import 'package:os_aligator_ir/src/components/playgrounds/cpuScheduling/models/TimeWindow.dart';
+import 'package:os_cpu_schedulers/models/Process.dart';
+import 'package:os_cpu_schedulers/models/Scheduler.dart';
+import 'package:os_cpu_schedulers/models/TimeWindow.dart';
 
 class RoundRobin implements CpuScheduler {
 

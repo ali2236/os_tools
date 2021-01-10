@@ -1,21 +1,14 @@
 import 'package:angular/angular.dart';
 import 'package:angular_forms/angular_forms.dart';
 import 'package:os_aligator_ir/src/components/page_header.component.dart';
-import 'package:os_aligator_ir/src/components/playgrounds/cpuScheduling/cpuSchedulers/mfq.dart';
 import 'package:os_aligator_ir/src/components/playgrounds/playground_back_button.component.dart';
 import 'package:os_aligator_ir/src/components/playgrounds/playground_project.dart';
 import 'package:os_aligator_ir/src/components/playgrounds/playgrounds.dart';
+import 'package:os_cpu_schedulers/os_cpu_schedulers.dart';
 
 import '../playground_page.dart';
 import 'average_memory_time.component.dart';
-import 'cpuSchedulers/fcfs.dart';
-import 'cpuSchedulers/hrrn.dart';
-import 'cpuSchedulers/rr.dart';
-import 'cpuSchedulers/sjf.dart';
-import 'cpuSchedulers/sps.dart';
-import 'cpuSchedulers/srt.dart';
 import 'cpu_utilization.component.dart';
-import 'models/ProcessParser.dart';
 import 'scheduler_form.component.dart';
 
 @Component(

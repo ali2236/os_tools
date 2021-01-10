@@ -1,10 +1,6 @@
 import 'package:angular/angular.dart';
 import 'package:angular_forms/angular_forms.dart';
-import 'package:os_aligator_ir/src/components/playgrounds/cpuScheduling/models/Process.dart';
-import 'package:os_aligator_ir/src/components/playgrounds/cpuScheduling/models/Scheduler.dart';
-import 'package:os_aligator_ir/src/components/playgrounds/cpuScheduling/models/TimeWindow.dart';
-
-import 'models/ProcessParser.dart';
+import 'package:os_cpu_schedulers/os_cpu_schedulers.dart';
 
 @Component(
   selector: 'scheduler-form',
@@ -49,7 +45,10 @@ import 'models/ProcessParser.dart';
   </div>
   </div>
   ''',
-  directives: [coreDirectives, formDirectives, /*GanttChart*/],
+  directives: [
+    coreDirectives,
+    formDirectives, /*GanttChart*/
+  ],
 )
 class SchedulerForm {
   @Input()
@@ -76,17 +75,11 @@ class SchedulerForm {
   List<Process> get tableProcesses =>
       List.from(processes)..sort((p1, p2) => p1.label.compareTo(p2.label));
 
-  num get ATT =>
-      processes.map((e) => e.turnaroundTime).reduce((a, b) => a + b) /
-      processes.length;
+  num get ATT => processes.ATT;
 
-  num get AWT =>
-      processes.map((e) => e.waitingTime).reduce((a, b) => a + b) /
-      processes.length;
+  num get AWT => processes.AWT;
 
-  num get ART =>
-      processes.map((e) => e.responseTime).reduce((a, b) => a + b) /
-      processes.length;
+  num get ART => processes.ART;
 
   void calculate() {
     var rawInput = inputText ?? placeholder ?? '';
