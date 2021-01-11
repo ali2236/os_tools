@@ -21,11 +21,13 @@ class AllocationTimeline {
   @override
   int get hashCode => snapshots.hashCode;
 
-  @override
-  String toString() {
-    return jsonEncode({
+  Map<String, dynamic> toMap(){
+    return {
       'page_faults' : pageFaults,
       'snapshots': snapshots.map((e) => e.toMap()).toList(),
-    });
+    };
   }
+
+  @override
+  String toString() => jsonEncode(toMap());
 }

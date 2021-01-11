@@ -4,10 +4,11 @@ description: A simple command-line application.
 # homepage: https://www.example.com
 
 environment:
-  sdk: '>=2.10.0 <3.0.0'
+  sdk: '>=2.9.0 <3.0.0'
 
 dependencies:
   darq:
+  pretty_json: ^1.1.0
 
 dev_dependencies:
   test:
