@@ -2,10 +2,11 @@ import 'package:os_memory_allocators/os_memory_allocators.dart';
 import 'package:test/test.dart';
 
 void main() {
-  group('Least Recently Used', () {
+  group('Clock Policy', ()
+  {
     test('test 1', () {
       expect(
-        LeastRecentlyUsed()
+        ClockPolicy()
             .calculate([2, 3, 2, 1, 5, 2, 4, 5, 3, 2, 5, 2], 3),
         equals(
           AllocationTimeline([
@@ -17,114 +18,127 @@ void main() {
                 Frame(null),
                 Frame(null),
               ]),
+              pointer: 0,
             ),
             AllocationSnapshot(
               2,
               true,
               MemoryStack.fromFrames([
-                Frame(2),
+                CPFrame(2),
                 Frame(null),
                 Frame(null),
               ]),
+              pointer: 1,
             ),
             AllocationSnapshot(
               3,
               true,
               MemoryStack.fromFrames([
-                Frame(2),
-                Frame(3),
+                CPFrame(2),
+                CPFrame(3),
                 Frame(null),
               ]),
+              pointer: 2,
             ),
             AllocationSnapshot(
               2,
               false,
               MemoryStack.fromFrames([
-                Frame(2),
-                Frame(3),
+                CPFrame(2),
+                CPFrame(3),
                 Frame(null),
               ]),
+              pointer: 2,
             ),
             AllocationSnapshot(
               1,
               true,
               MemoryStack.fromFrames([
-                Frame(2),
-                Frame(3),
-                Frame(1),
+                CPFrame(2),
+                CPFrame(3),
+                CPFrame(1),
               ]),
+              pointer: 0,
             ),
             AllocationSnapshot(
               5,
               true,
               MemoryStack.fromFrames([
-                Frame(2),
-                Frame(5),
-                Frame(1),
+                CPFrame(5),
+                CPFrame(3, 0),
+                CPFrame(1, 0),
               ]),
+              pointer: 1,
             ),
             AllocationSnapshot(
               2,
-              false,
+              true,
               MemoryStack.fromFrames([
-                Frame(2),
-                Frame(5),
-                Frame(1),
+                CPFrame(5),
+                CPFrame(2),
+                CPFrame(1, 0),
               ]),
+              pointer: 2,
             ),
             AllocationSnapshot(
               4,
               true,
               MemoryStack.fromFrames([
-                Frame(2),
-                Frame(5),
-                Frame(4),
+                CPFrame(5),
+                CPFrame(2),
+                CPFrame(4),
               ]),
+              pointer: 0,
             ),
             AllocationSnapshot(
               5,
               false,
               MemoryStack.fromFrames([
-                Frame(2),
-                Frame(5),
-                Frame(4),
+                CPFrame(5),
+                CPFrame(2),
+                CPFrame(4),
               ]),
+              pointer: 0,
             ),
             AllocationSnapshot(
               3,
               true,
               MemoryStack.fromFrames([
-                Frame(3),
-                Frame(5),
-                Frame(4),
+                CPFrame(3),
+                CPFrame(2, 0),
+                CPFrame(4, 0),
               ]),
+              pointer: 1,
             ),
             AllocationSnapshot(
               2,
-              true,
+              false,
               MemoryStack.fromFrames([
-                Frame(3),
-                Frame(5),
-                Frame(2),
+                CPFrame(3),
+                CPFrame(2),
+                CPFrame(4, 0),
               ]),
+              pointer: 1,
             ),
             AllocationSnapshot(
               5,
-              false,
+              true,
               MemoryStack.fromFrames([
-                Frame(3),
-                Frame(5),
-                Frame(2),
+                CPFrame(3),
+                CPFrame(2, 0),
+                CPFrame(5),
               ]),
+              pointer: 0,
             ),
             AllocationSnapshot(
               2,
               false,
               MemoryStack.fromFrames([
-                Frame(3),
-                Frame(5),
-                Frame(2),
+                CPFrame(3),
+                CPFrame(2),
+                CPFrame(5),
               ]),
+              pointer: 0,
             ),
           ]),
         ),

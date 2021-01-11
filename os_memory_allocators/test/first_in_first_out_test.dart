@@ -2,10 +2,10 @@ import 'package:os_memory_allocators/os_memory_allocators.dart';
 import 'package:test/test.dart';
 
 void main() {
-  group('Least Recently Used', () {
+  group('First In First Out', () {
     test('test 1', () {
       expect(
-        LeastRecentlyUsed()
+        FirstInFirstOut()
             .calculate([2, 3, 2, 1, 5, 2, 4, 5, 3, 2, 5, 2], 3),
         equals(
           AllocationTimeline([
@@ -58,17 +58,17 @@ void main() {
               5,
               true,
               MemoryStack.fromFrames([
-                Frame(2),
                 Frame(5),
+                Frame(3),
                 Frame(1),
               ]),
             ),
             AllocationSnapshot(
               2,
-              false,
+              true,
               MemoryStack.fromFrames([
-                Frame(2),
                 Frame(5),
+                Frame(2),
                 Frame(1),
               ]),
             ),
@@ -76,8 +76,8 @@ void main() {
               4,
               true,
               MemoryStack.fromFrames([
-                Frame(2),
                 Frame(5),
+                Frame(2),
                 Frame(4),
               ]),
             ),
@@ -85,8 +85,8 @@ void main() {
               5,
               false,
               MemoryStack.fromFrames([
-                Frame(2),
                 Frame(5),
+                Frame(2),
                 Frame(4),
               ]),
             ),
@@ -95,6 +95,24 @@ void main() {
               true,
               MemoryStack.fromFrames([
                 Frame(3),
+                Frame(2),
+                Frame(4),
+              ]),
+            ),
+            AllocationSnapshot(
+              2,
+              false,
+              MemoryStack.fromFrames([
+                Frame(3),
+                Frame(2),
+                Frame(4),
+              ]),
+            ),
+            AllocationSnapshot(
+              5,
+              true,
+              MemoryStack.fromFrames([
+                Frame(3),
                 Frame(5),
                 Frame(4),
               ]),
@@ -102,24 +120,6 @@ void main() {
             AllocationSnapshot(
               2,
               true,
-              MemoryStack.fromFrames([
-                Frame(3),
-                Frame(5),
-                Frame(2),
-              ]),
-            ),
-            AllocationSnapshot(
-              5,
-              false,
-              MemoryStack.fromFrames([
-                Frame(3),
-                Frame(5),
-                Frame(2),
-              ]),
-            ),
-            AllocationSnapshot(
-              2,
-              false,
               MemoryStack.fromFrames([
                 Frame(3),
                 Frame(5),

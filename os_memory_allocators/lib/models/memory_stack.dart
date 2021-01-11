@@ -28,6 +28,14 @@ class MemoryStack {
     return _frames.contains(Frame(ref));
   }
 
+  bool emptyAt(int index){
+    return _frames[index].number == null;
+  }
+
+  Frame getFrameAt(int index) {
+    return _frames[index];
+  }
+
   MemoryStack putAt(int index, Frame frame) {
     var newStack = List.of(frames);
     newStack[index] = frame;
@@ -54,4 +62,8 @@ class MemoryStack {
 
   @override
   int get hashCode => _frames.hashCode;
+
+
+
+
 }
