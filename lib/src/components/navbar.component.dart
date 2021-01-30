@@ -10,7 +10,7 @@ import '../routing/route_paths.dart';
        <a class="navbar-brand" [routerLink]="RoutePaths.playgrounds.toUrl()"><h1>OS!</h1></a>
        <div id="collapseNavbar" class="collapse navbar-collapse">       
        <ul class="navbar-nav ml-auto">
-           <li class="nav-item"><a class="nav-link" [routerLink]="RoutePaths.playgrounds.toUrl()" [routerLinkActive]="'active'">Playgrounds</a></li>
+           <li class="nav-item"><a class="nav-link" [routerLink]="RoutePaths.playgrounds.toUrl()" [routerLinkActive]="'active'">Tools</a></li>
        </ul>
        </div>
        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#collapseNavbar" aria-controls="collapseNavbar" aria-expanded="false" aria-label="Toggle navigation">

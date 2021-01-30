@@ -14,6 +14,8 @@ String get nextLine => io.stdin.readLineSync();
 int get nextInt => int.tryParse(nextLine);
 
 void main() {
+  printPrettyJson(ClockPolicy().calculate([1, 2, 3, 4, 5, 2, 6, 3, 5, 2, 4, 6, 3, 4, 6, 2], 3).toMap());
+  return;
   while (true) {
     try {
       readFromStdIn();

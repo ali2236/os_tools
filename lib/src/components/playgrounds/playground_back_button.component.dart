@@ -1,11 +1,9 @@
 import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
-import 'package:os_aligator_ir/src/components/bootstrap_icon.dart';
 
 @Component(
   selector: 'playground-back-button',
-  template: r'<p class="ag-text-dark m-0" style="cursor: pointer" (click)="goBack()">Playground</p>',
-  directives: [BootstrapIcon]
+  template: r'<p class="ag-text-dark m-0" style="cursor: pointer" (click)="goBack()">Tools</p>',
 )
 class PlaygroundBackButton {
 

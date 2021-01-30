@@ -31,8 +31,8 @@ class PlaygroundsPage extends PageSEO {
       Playgrounds.playgrounds.segment(3, includeTail: true);
 
   @override
-  String get pageTitle => 'Playgrounds';
+  String get pageTitle => 'Tools';
 
   @override
-  String get pageDescription => 'A place where I do coding experiments!';
+  String get pageDescription => 'Small Dart/angularDart based OS solvers!';
 }

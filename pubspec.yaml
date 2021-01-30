@@ -3,9 +3,14 @@ description: An absolute bare-bones web app.
 version: 1.0.0
 homepage: https://os.aligator.ir
 
+environment:
+  sdk: '>=2.7.0 <2.10.5'
+
 dependencies:
   os_cpu_schedulers:
     path: os_cpu_schedulers
+  os_memory_allocators:
+    path: os_memory_allocators
 
   angular: 6.0.0
   angular_components: ^1.0.2
@@ -23,7 +28,7 @@ dependencies:
 
 dev_dependencies:
   test:
-  build_runner: ^1.9.0
+  build_runner: ^1.10.0
   #build_resolvers: ^1.3.11
   build_web_compilers: ^2.10.0
   pedantic: ^1.9.2

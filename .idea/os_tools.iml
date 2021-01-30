@@ -9,6 +9,9 @@
       <excludeFolder url="file://$MODULE_DIR$/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/build" />
+      <excludeFolder url="file://$MODULE_DIR$/os_deadlock_avoidance/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/os_deadlock_avoidance/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/os_deadlock_avoidance/build" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
