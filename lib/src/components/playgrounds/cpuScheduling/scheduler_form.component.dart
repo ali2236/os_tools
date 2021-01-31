@@ -1,5 +1,6 @@
 import 'package:angular/angular.dart';
 import 'package:angular_forms/angular_forms.dart';
+import 'package:os_aligator_ir/src/components/playgrounds/cpuScheduling/time_card.component.dart';
 import 'package:os_cpu_schedulers/os_cpu_schedulers.dart';
 
 import 'gantt_chart.component.dart';
@@ -13,39 +14,45 @@ import 'gantt_chart.component.dart';
     <button class="btn btn-primary mt-2" (click)="calculate()">Calculate</button>
     <!--<button class="btn btn-secondary mt-2" (click)="clear()">Clear</button>-->
   <div *ngIf="output!=null">
-    <h5>{{name}} Gantt List:</h5>
-    <gantt-chart [times]="times"></gantt-chart>
-    <p>{{output}}</p>
-    <br />
+    <div class="row">
+      <div class="col-md-4 col-sm-12 my-3"><time-card title="Average Turnaround Time" [value]="ATT"></time-card></div>
+      <div class="col-md-4 col-sm-12 my-3"><time-card title="Average Response Time" [value]="ART"></time-card></div>
+      <div class="col-md-4 col-sm-12 my-3"><time-card title="Average Waiting Time" [value]="AWT"></time-card></div>
+    </div>
     <table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Process</th>
-      <th scope="col">Arrival Time</th>
-      <th scope="col">Service Time</th>
-      <th scope="col">Turnaround Time</th>
-      <th scope="col">Response Time</th>
-      <th scope="col">Waiting Time</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let process of tableProcesses">
-      <td>{{process.label}}</td>
-      <td>{{process.arrivalTime}}</td>
-      <td>{{process.serviceTime}}</td>
-      <td>{{process.turnaroundTime}}</td>
-      <td>{{process.responseTime}}</td>
-      <td>{{process.waitingTime}}</td>
-    </tr>
-  </tbody>
-</table>
-  <p>Average Turnaround Time: {{ATT}}</p>
-  <p>Average Response Time: {{ART}}</p>
-  <p>Average Waiting Time: {{AWT}}</p>
-  </div>
+        <thead>
+          <tr>
+            <th scope="col">Process</th>
+            <th scope="col">Arrival Time</th>
+            <th scope="col">Service Time</th>
+            <th scope="col">Turnaround Time</th>
+            <th scope="col">Response Time</th>
+            <th scope="col">Waiting Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let process of tableProcesses">
+            <td>{{process.label}}</td>
+            <td>{{process.arrivalTime}}</td>
+            <td>{{process.serviceTime}}</td>
+            <td>{{process.turnaroundTime}}</td>
+            <td>{{process.responseTime}}</td>
+            <td>{{process.waitingTime}}</td>
+          </tr>
+        </tbody>
+    </table>
+        <h5>{{name}} Gantt Chart:</h5>
+    <gantt-chart [times]="times"></gantt-chart>
+    <!--<p>{{output}}</p>-->
+    </div>
   </div>
   ''',
-  directives: [coreDirectives, formDirectives, GanttChart],
+  directives: [
+    coreDirectives,
+    formDirectives,
+    GanttChart,
+    TimeCard,
+  ],
 )
 class SchedulerForm with OnInit {
   @Input()
