@@ -2,7 +2,7 @@ import 'package:angular_router/angular_router.dart';
 import 'package:os_aligator_ir/src/components/playgrounds/playgrounds.dart';
 import '../components/playgrounds/playgrounds_page.template.dart' as playgrounds;
 import '../components/playgrounds/cpuScheduling/cpu_scheduling_page.template.dart' as cpus;
-import '../components/playgrounds/frameAllocation/frame_allocation_page.template.dart' as frames;
+import '../components/playgrounds/pageReplacement/frame_allocation_page.template.dart' as frames;
 import 'route_paths.dart';
 
 class Routes {
@@ -16,7 +16,7 @@ class Routes {
       component: cpus.CpuSchedulingPageNgFactory,
     ),
     RouteDefinition(
-      routePath: Playgrounds.frame_allocation.path,
+      routePath: Playgrounds.page_replacement.path,
       component: frames.FrameAllocationPageNgFactory,
     ),
     RouteDefinition.redirect(

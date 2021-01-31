@@ -1,6 +1,6 @@
 import 'package:angular/angular.dart';
-import 'package:os_aligator_ir/src/components/playgrounds/frameAllocation/alocation_snapshot.component.dart';
 import 'package:os_memory_allocators/os_memory_allocators.dart';
+import 'alocation_snapshot.component.dart';
 
 @Component(
   selector: 'allocation-timeline',

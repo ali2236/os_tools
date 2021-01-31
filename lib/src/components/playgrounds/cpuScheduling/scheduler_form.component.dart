@@ -2,19 +2,19 @@ import 'package:angular/angular.dart';
 import 'package:angular_forms/angular_forms.dart';
 import 'package:os_cpu_schedulers/os_cpu_schedulers.dart';
 
+import 'gantt_chart.component.dart';
+
 @Component(
   selector: 'scheduler-form',
   template: '''
   <div>
-  <div class="form-group">
     <label for="processTextArea">{{format}}</label>
     <textarea class="form-control" id="processTextArea" rows="5" [placeholder]="placeholder" [(ngModel)]="inputText"></textarea>
     <button class="btn btn-primary mt-2" (click)="calculate()">Calculate</button>
-    <button class="btn btn-secondary mt-2" (click)="clear()">Clear</button>
-  </div>
+    <!--<button class="btn btn-secondary mt-2" (click)="clear()">Clear</button>-->
   <div *ngIf="output!=null">
     <h5>{{name}} Gantt List:</h5>
-    <!--<gantt-chart [times]="times"></gantt-chart>-->
+    <gantt-chart [times]="times"></gantt-chart>
     <p>{{output}}</p>
     <br />
     <table class="table table-striped">
@@ -45,12 +45,9 @@ import 'package:os_cpu_schedulers/os_cpu_schedulers.dart';
   </div>
   </div>
   ''',
-  directives: [
-    coreDirectives,
-    formDirectives, /*GanttChart*/
-  ],
+  directives: [coreDirectives, formDirectives, GanttChart],
 )
-class SchedulerForm {
+class SchedulerForm with OnInit {
   @Input()
   String name;
 
@@ -89,5 +86,10 @@ class SchedulerForm {
 
   void clear() {
     times = null;
+  }
+
+  @override
+  void ngOnInit() {
+    calculate();
   }
 }

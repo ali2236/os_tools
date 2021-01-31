@@ -1,6 +1,6 @@
 import 'package:angular/angular.dart';
 import 'package:angular_components/angular_components.dart';
-import 'package:os_aligator_ir/src/components/playgrounds/frameAllocation/frame.component.dart';
+import 'package:os_aligator_ir/src/components/playgrounds/pageReplacement/frame.component.dart';
 import 'package:os_aligator_ir/src/models/colors.dart';
 import 'package:os_memory_allocators/os_memory_allocators.dart';
 
