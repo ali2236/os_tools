@@ -1,5 +1,11 @@
 # [os.aligator.ir](os.aligator.ir)
 
+## Screenshots
+
+![cpu-scheduling](screenshots/cs.png)
+
+![page-replacement](screenshots/pr.png)
+
 ## How to run
 1. Make sure you have: `Dart Sdk 2.10.4`
 2. If you don't have `webdev` install it using: `dart pub global activate webdev`
